@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalPhoto</title>
@@ -33,7 +32,7 @@
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__option">
+        {{-- <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="#">Sign in</a>
                 <a href="#">FAQs</a>
@@ -46,23 +45,39 @@
                     <li>USD</li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
         <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
+            @if (Route::has('login'))
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="">
+                        Login
+                    </a>
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="">
+                    Register
+                    </a>
+                @endif
+                @endauth
+            @endif
+            {{-- <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
             <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
             <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <div class="price">$0.00</div> --}}
         </div>
-        <div id="mobile-menu-wrap"></div>
+        {{-- <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
-        </div>
+        </div> --}}
     </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="header__top">
+        {{-- <div class="header__top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
@@ -88,7 +103,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
@@ -100,8 +115,8 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            {{-- <li><a href="./shop.html">Shop</a></li> --}}
+                            {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.html">About Us</a></li>
                                     <li><a href="./shop-details.html">Shop Details</a></li>
@@ -109,19 +124,37 @@
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            </li> --}}
+                            {{-- <li><a href="./blog.html">Blog</a></li> --}}
                             <li><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
+                    <nav class="header__menu mobile-menu">
+                        @if (Route::has('login'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class="">
+                                    Dashboard
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}" class="">
+                                    Login
+                                </a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="">
+                                Register
+                                </a>
+                            @endif
+                            @endauth
+                        @endif
+                    </nav>
+                    {{-- <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
                         <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
                         <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
@@ -179,7 +212,7 @@
     <!-- Hero Section End -->
 
     <!-- Banner Section Begin -->
-    <section class="banner spad">
+    {{-- <section class="banner spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 offset-lg-4">
@@ -217,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Banner Section End -->
 
     <!-- Product Section Begin -->
@@ -227,8 +260,8 @@
                 <div class="col-lg-12">
                     <ul class="filter__controls">
                         <li class="active" data-filter="*">Best Sellers</li>
-                        <li data-filter=".new-arrivals">New Arrivals</li>
-                        <li data-filter=".hot-sales">Hot Sales</li>
+                        {{-- <li data-filter=".new-arrivals">New Arrivals</li>
+                        <li data-filter=".hot-sales">Hot Sales</li> --}}
                     </ul>
                 </div>
             </div>
@@ -237,24 +270,24 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-1.jpg">
                             <span class="label">New</span>
-                            <ul class="product__hover">
+                            {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="product__item__text">
                             <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            {{-- <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
+                            </div> --}}
+                            <h5>$67.24</h5> 
+                            {{-- <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">
                                 </label>
@@ -264,31 +297,31 @@
                                 <label class="grey" for="pc-3">
                                     <input type="radio" id="pc-3">
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-2.jpg">
-                            <ul class="product__hover">
+                            {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="product__item__text">
                             <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
+                            {{-- <a href="#" class="add-cart">+ Add To Cart</a> --}}
+                            {{-- <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
+                            </div> --}}
                             <h5>$67.24</h5>
-                            <div class="product__color__select">
+                            {{-- <div class="product__color__select">
                                 <label for="pc-4">
                                     <input type="radio" id="pc-4">
                                 </label>
@@ -298,7 +331,7 @@
                                 <label class="grey" for="pc-6">
                                     <input type="radio" id="pc-6">
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -306,24 +339,24 @@
                     <div class="product__item sale">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-3.jpg">
                             <span class="label">Sale</span>
-                            <ul class="product__hover">
+                            {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="product__item__text">
                             <h6>Multi-pocket Chest Bag</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
+                            {{-- <a href="#" class="add-cart">+ Add To Cart</a> --}}
+                            {{-- <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
+                            </div> --}}
                             <h5>$43.48</h5>
-                            <div class="product__color__select">
+                            {{-- <div class="product__color__select">
                                 <label for="pc-7">
                                     <input type="radio" id="pc-7">
                                 </label>
@@ -333,31 +366,31 @@
                                 <label class="grey" for="pc-9">
                                     <input type="radio" id="pc-9">
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-4.jpg">
-                            <ul class="product__hover">
+                            {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="product__item__text">
                             <h6>Diagonal Textured Cap</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            {{-- <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
+                            </div> --}}
                             <h5>$60.9</h5>
-                            <div class="product__color__select">
+                            {{-- <div class="product__color__select">
                                 <label for="pc-10">
                                     <input type="radio" id="pc-10">
                                 </label>
@@ -367,11 +400,11 @@
                                 <label class="grey" for="pc-12">
                                     <input type="radio" id="pc-12">
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-5.jpg">
                             <ul class="product__hover">
@@ -507,14 +540,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
     <!-- Product Section End -->
 
     <!-- Categories Section Begin -->
-    <section class="categories spad">
+    {{-- <section class="categories spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -558,11 +591,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Categories Section End -->
 
     <!-- Instagram Section Begin -->
-    <section class="instagram spad">
+    {{-- <section class="instagram spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -585,11 +618,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Instagram Section End -->
 
     <!-- Latest Blog Section Begin -->
-    <section class="latest spad">
+    {{-- <section class="latest spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -632,7 +665,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Latest Blog Section End -->
 
     <!-- Footer Section Begin -->
@@ -648,7 +681,7 @@
                         <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                {{-- <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
@@ -658,8 +691,8 @@
                             <li><a href="#">Sale</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
+                </div> --}}
+                {{-- <div class="col-lg-2 col-md-3 col-sm-6">
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
@@ -669,10 +702,10 @@
                             <li><a href="#">Return & Exchanges</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                     <div class="footer__widget">
-                        <h6>NewLetter</h6>
+                        <h6>NewsLetter</h6>
                         <div class="footer__newslatter">
                             <p>Be the first to know about new arrivals, look books, sales & promos!</p>
                             <form action="#">
@@ -687,13 +720,13 @@
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright ©
+                        {{-- <p>Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
                             aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
+                        </p> --}}
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
@@ -703,14 +736,14 @@
     <!-- Footer Section End -->
 
     <!-- Search Begin -->
-    <div class="search-model">
+    {{-- <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch">+</div>
             <form class="search-model-form">
                 <input type="text" id="search-input" placeholder="Search here.....">
             </form>
         </div>
-    </div>
+    </div> --}}
     <!-- Search End -->
 
     <!-- Js Plugins -->
