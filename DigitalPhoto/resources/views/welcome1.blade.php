@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
+    <meta name="description" content="DigitalPhoto">
     {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -108,7 +108,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/welcome_img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/welcome_img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="img/welcome_img/Carousel4.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
