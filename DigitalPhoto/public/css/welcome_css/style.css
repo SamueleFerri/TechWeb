@@ -165,7 +165,7 @@ ol {
 	padding: 14px 30px;
 	color: #ffffff;
 	background: #000000;
-	letter-spacing: 4px;
+	/* letter-spacing: 4px; */
 }
 
 .site-btn {
@@ -585,7 +585,7 @@ ol {
 
 .hero__items {
 	height: 800px;
-	padding-top: 230px;
+	padding-top: 150px;
 }
 
 .hero__text h6 {
@@ -906,6 +906,14 @@ ol {
 /*---------------------
   Product
 -----------------------*/
+.subsection {
+	color: #111111;
+	text-align: center;
+	margin-bottom: 45px;
+	margin-top: 45px;
+	font-size: 24px;
+	font-weight: 700;
+}
 
 .product {
 	padding-top: 0;
@@ -915,6 +923,7 @@ ol {
 .filter__controls {
 	text-align: center;
 	margin-bottom: 45px;
+	margin-top: 45px;
 }
 
 .filter__controls li {
@@ -1943,10 +1952,11 @@ ol {
 
 .footer__about {
 	margin-bottom: 30px;
+	margin-right: 40px;
 }
 
 .footer__about .footer__logo {
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .footer__about .footer__logo a {
@@ -1960,6 +1970,7 @@ ol {
 
 .footer__widget {
 	margin-bottom: 30px;
+	margin-left: 35px;
 }
 
 .footer__widget h6 {
@@ -3805,9 +3816,10 @@ ol {
 		padding-top: 130px;
 		padding-bottom: 40px;
 	}
-	.hero__text h2 {
-		font-size: 36px;
-		line-height: 48px;
+	.hero__text h2, h6 {
+		/* font-size: 36px;
+		line-height: 48px; */
+		display: none;
 	}
 	.hero__social {
 		margin-top: 145px;
@@ -3847,5 +3859,15 @@ ol {
 	}
 	.categories__text:before {
 		height: 250px;
+	}
+
+	.footer__about {
+		margin-top: 10px;
+	}
+
+	.footer__widget {
+		margin-bottom: 10px;
+		margin-left: 0px;
+		margin-right: 40px; 
 	}
 }

@@ -336,7 +336,7 @@ img.mfp-img {
     text-align: center;
     padding: 0; } }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1240px) {
   .mfp-arrow {
     -webkit-transform: scale(0.75);
     transform: scale(0.75); }

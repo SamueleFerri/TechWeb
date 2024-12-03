@@ -143,7 +143,7 @@
                                 </a>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="">
-                                Register
+                                    Register
                                 </a>
                             @endif
                             @endauth
@@ -165,43 +165,42 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/welcome_img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="img/welcome_img/Carousel2.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
+                                <h6>DigitalPhoto Collection</h6>
+                                <h2>Benvenuti su DigitalPhoto-Shop</h2>
+                                {{-- <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                commitment to exceptional quality.</p> --}}
+                                <a href="{{ route('login') }}" class="primary-btn">FAI LOGIN PER L'ACQUISTO  <span class="arrow_right"></span></a>
+                                {{-- <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                     <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/welcome_img/Carousel3.jpg">
+            <div class="hero__items set-bg" data-setbg="img/welcome_img/Carousel1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
+                                <h6>DigitalPhoto Collection</h6>
+                                <h2>Impara subito a scattare foto come queste...</h2>
+                                {{-- <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                commitment to exceptional quality.</p> --}}
+                                <a href="{{ route('login') }}" class="primary-btn">FAI LOGIN PER L'ACQUISTO  <span class="arrow_right"></span></a>                                {{-- <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                     <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -258,11 +257,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="filter__controls">
+                    <p class="subsection">Articoli più venduti</p>
+                    {{-- <ul class="filter__controls">
                         <li class="active" data-filter="*">Best Sellers</li>
-                        {{-- <li data-filter=".new-arrivals">New Arrivals</li>
-                        <li data-filter=".hot-sales">Hot Sales</li> --}}
-                    </ul>
+                        <li data-filter=".new-arrivals">New Arrivals</li>
+                        <li data-filter=".hot-sales">Hot Sales</li>
+                    </ul> --}}
                 </div>
             </div>
             <div class="row product__filter">
@@ -672,10 +672,13 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/welcome_img/footer-logo.png" alt=""></a>
+                            <div class="header__logo">
+                                <a href="./index.html"><img src="img/welcome_img/DPLogoGrigio.png" alt=""></a>
+                            </div>
+                            <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
                         </div>
                         <p>The customer is at the heart of our unique business model, which includes design.</p>
                         <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
@@ -703,7 +706,7 @@
                         </ul>
                     </div>
                 </div> --}}
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h6>NewsLetter</h6>
                         <div class="footer__newslatter">
