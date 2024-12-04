@@ -1,3 +1,9 @@
+<?php
+    
+    use Illuminate\Support\Facades\DB;
+
+    $albums = DB::select('SELECT * FROM albums');
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -266,28 +272,39 @@
                 </div>
             </div>
             <div class="row product__filter">
+                <?php
+                    foreach ($albums as $row){
+                ?>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
                             <span class="label">New</span>
-                            {{-- <ul class="product__hover">
+                        </div>
+                        <div class="product__item__text">
+                            <h5><?php echo $row->titolo ?></h5>
+                            <h6><?php echo $row->descrizione?></h6>
+                        </div> 
+                    </div>
+                        {{-- <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-1.jpg">
+                            <span class="label">New</span>
+                            <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul> --}}
+                            </ul>
                         </div>
                         <div class="product__item__text">
                             <h6>Piqué Biker Jacket</h6>
-                            {{-- <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div> --}}
+                            </div>
                             <h5>$67.24</h5> 
-                            {{-- <div class="product__color__select">
+                            <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">
                                 </label>
@@ -297,10 +314,15 @@
                                 <label class="grey" for="pc-3">
                                     <input type="radio" id="pc-3">
                                 </label>
-                            </div> --}}
+                            </div>
                         </div>
-                    </div>
+
+                        
+                    </div> --}}
                 </div>
+                <?php
+                    }
+                ?>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-2.jpg">
