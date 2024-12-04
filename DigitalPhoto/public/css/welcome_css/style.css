@@ -411,6 +411,9 @@ ol {
 	display: inline-block;
 }
 
+.header__logo a img {
+	max-width: 70%;
+}
 .header__menu {
 	text-align: center;
 	padding: 26px 0 25px;
@@ -3383,7 +3386,7 @@ ol {
 @media only screen and (min-width: 1200px) {
 	.container {
 		max-width: 1170px;
-	}
+	}	
 }
 
 /* Medium Device = 1200px */
@@ -3564,9 +3567,6 @@ ol {
 	}
 	.slicknav_nav {
 		display: block !important;
-	}
-	.header__logo a img {
-		max-width: 70%;
 	}
 	.offcanvas__option {
 		text-align: center;
