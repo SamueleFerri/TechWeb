@@ -108,7 +108,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="#"><img src="img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -675,12 +675,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <div class="header__logo">
-                                <a href="./index.html"><img src="img/welcome_img/DPLogoGrigio.png" alt=""></a>
-                            </div>
                             <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
                         </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
+                            esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
+                            fotografiche. </p>
                         <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
                     </div>
                 </div>
@@ -710,9 +709,9 @@
                     <div class="footer__widget">
                         <h6>NewsLetter</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>Iscriviti alla nostra Newsletter per offerte esclusive, consigli fotografici e le ultime novità di DigitalPhoto!</p>
                             <form action="#">
-                                <input type="text" placeholder="Your email">
+                                <input type="text" placeholder="Email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
                             </form>
                         </div>

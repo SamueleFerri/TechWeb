@@ -1955,7 +1955,7 @@ ol {
 	margin-right: 40px;
 }
 
-.footer__about .footer__logo {
+.footer__logo {
 	margin-bottom: 40px;
 }
 
@@ -1964,8 +1964,13 @@ ol {
 }
 
 .footer__about p {
+	font-size: 12px;
 	color: #b7b7b7;
 	margin-bottom: 30px;
+}
+
+.footer__logo img {
+	max-width: 45%;
 }
 
 .footer__widget {
@@ -3485,7 +3490,7 @@ ol {
 		cursor: pointer;
 		position: absolute;
 		right: 15px;
-		top: 25px;
+		top: 28px;
 	}
 	.offcanvas-menu-overlay {
 		position: fixed;
@@ -3559,6 +3564,9 @@ ol {
 	}
 	.slicknav_nav {
 		display: block !important;
+	}
+	.header__logo a img {
+		max-width: 70%;
 	}
 	.offcanvas__option {
 		text-align: center;
