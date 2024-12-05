@@ -59,11 +59,11 @@
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="">
+                    <a href="{{ route('login') }}" class="primary-btn">
                         Login
                     </a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="">
+                    <a href="{{ route('register') }}" class="primary-btn">
                     Register
                     </a>
                 @endif
@@ -114,13 +114,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="#"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="/">Benvenuti</a></li>
                             {{-- <li><a href="./shop.html">Shop</a></li> --}}
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -132,7 +132,7 @@
                                 </ul>
                             </li> --}}
                             {{-- <li><a href="./blog.html">Blog</a></li> --}}
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li><a href="about">Chi Siamo</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -144,11 +144,11 @@
                                     Dashboard
                                 </a>
                             @else
-                                <a href="{{ route('login') }}" class="">
+                                <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                                     Login
                                 </a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="">
+                                <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
                                     Register
                                 </a>
                             @endif
@@ -697,12 +697,12 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
+                            <a href="/"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
                         </div>
                         <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
                             esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
                             fotografiche. </p>
-                        <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
+                        <a href="/"><img src="img/welcome_img/payment.png" alt=""></a>
                     </div>
                 </div>
                 {{-- <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -732,7 +732,7 @@
                         <h6>NewsLetter</h6>
                         <div class="footer__newslatter">
                             <p>Iscriviti alla nostra Newsletter per offerte esclusive, consigli fotografici e le ultime novità di DigitalPhoto!</p>
-                            <form action="#">
+                            <form action="/">
                                 <input type="text" placeholder="Email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
                             </form>

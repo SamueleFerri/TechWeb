@@ -168,6 +168,18 @@ ol {
 	/* letter-spacing: 4px; */
 }
 
+.primary-btn-LoginRegister {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 7px 20px;
+	color: #FFFFFF;
+	background: #BD6E6D;
+	border-radius: 5px;
+	/* letter-spacing: 4px; */
+}
+
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
@@ -495,8 +507,8 @@ ol {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 2px;
-	background: #e53637;
+	height: 3px;
+	background: #BD6E6D;
 	content: "";
 	-webkit-transition: all, 0.5s;
 	-o-transition: all, 0.5s;
@@ -592,8 +604,8 @@ ol {
 }
 
 .hero__text h6 {
-	color: #e53637;
-	font-size: 14px;
+	color: #BD6E6D;
+	font-size: 17px;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
