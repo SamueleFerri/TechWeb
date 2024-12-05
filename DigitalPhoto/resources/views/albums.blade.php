@@ -364,24 +364,23 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="row product__filter">
-                            <?php
-                                foreach ($albums as $row){
-                            ?>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
-                                        <span class="label">New</span>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><?php echo $row->titolo ?></h5>
-                                        <h6><?php echo $row->descrizione?></h6>
-                                    </div> 
+                        <?php
+                            foreach ($albums as $row){
+                        ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
+                                    <span class="label">New</span>
                                 </div>
+                                <div class="product__item__text">
+                                    <h5><?php echo $row->titolo ?></h5>
+                                    <h6><?php echo $row->descrizione?></h6>
+                                </div> 
                             </div>
-                            <?php
-                                }
-                            ?>
+                        </div>
+                        <?php
+                            }
+                        ?>
                         {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
