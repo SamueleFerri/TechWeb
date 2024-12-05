@@ -2085,19 +2085,19 @@ ol {
 -----------------------*/
 
 .breadcrumb-option {
-	background: #f3f2ee;
+	background: #09476F;
 	padding: 40px 0;
 }
 
 .breadcrumb__text h4 {
-	color: #111111;
+	color: #BD6E6D;
 	font-weight: 700;
 	margin-bottom: 8px;
 }
 
 .breadcrumb__links a {
 	font-size: 15px;
-	color: #111111;
+	color: #BD6E6D;
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;
@@ -2113,7 +2113,7 @@ ol {
 
 .breadcrumb__links span {
 	font-size: 15px;
-	color: #b7b7b7;
+	color: #FFFFFF;
 	display: inline-block;
 }
 

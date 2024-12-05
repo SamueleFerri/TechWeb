@@ -10,6 +10,34 @@ Route::get('/', function () {
     return view('welcome1');
 });
 
+Route::get('/albums', function () {
+    return view('albums');
+});
+
+Route::get('/courses', function () {
+    return view('courses');
+});
+
+Route::get('/abaut', function () {
+    return view('abaut');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/bag', function () {
+    return view('bag');
+});
+
+Route::get('/likes', function () {
+    return view('likes');
+});
+
+Route::get('/gadgets', function () {
+    return view('gadgets');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
