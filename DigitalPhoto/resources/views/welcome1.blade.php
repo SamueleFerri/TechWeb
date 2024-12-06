@@ -1,5 +1,5 @@
 <?php
-    
+
     use Illuminate\Support\Facades\DB;
 
     $albums = DB::select('SELECT * FROM albums');
@@ -55,15 +55,15 @@
         <div class="offcanvas__nav__option">
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="">
+                    <a href="{{ url('/dashboard') }}" class="primary-btn-LoginRegister">
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="primary-btn">
+                    <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                         Login
                     </a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="primary-btn">
+                    <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
                     Register
                     </a>
                 @endif
@@ -283,7 +283,7 @@
                         <div class="product__item__text">
                             <h5><?php echo $row->titolo ?></h5>
                             <h6><?php echo $row->descrizione?></h6>
-                        </div> 
+                        </div>
                     </div>
                         {{-- <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-1.jpg">
                             <span class="label">New</span>
@@ -303,7 +303,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>$67.24</h5> 
+                            <h5>$67.24</h5>
                             <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">
@@ -317,23 +317,23 @@
                             </div>
                         </div>
 
-                        
+
                     </div> --}}
                 </div>
                 <?php
                     }
                 ?>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-2.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-2.jpg"> --}}
                             {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
                             </ul> --}}
-                        </div>
+                        {{-- </div>
                         <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
+                            <h6>Piqué Biker Jacket</h6> --}}
                             {{-- <a href="#" class="add-cart">+ Add To Cart</a> --}}
                             {{-- <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -342,7 +342,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div> --}}
-                            <h5>$67.24</h5>
+                            {{-- <h5>$67.24</h5> --}}
                             {{-- <div class="product__color__select">
                                 <label for="pc-4">
                                     <input type="radio" id="pc-4">
@@ -354,21 +354,21 @@
                                     <input type="radio" id="pc-6">
                                 </label>
                             </div> --}}
-                        </div>
+                        {{-- </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item sale">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-3.jpg">
-                            <span class="label">Sale</span>
+                            <span class="label">Sale</span> --}}
                             {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
                             </ul> --}}
-                        </div>
+                        {{-- </div>
                         <div class="product__item__text">
-                            <h6>Multi-pocket Chest Bag</h6>
+                            <h6>Multi-pocket Chest Bag</h6> --}}
                             {{-- <a href="#" class="add-cart">+ Add To Cart</a> --}}
                             {{-- <div class="rating">
                                 <i class="fa fa-star"></i>
@@ -377,7 +377,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                             </div> --}}
-                            <h5>$43.48</h5>
+                            {{-- <h5>$43.48</h5> --}}
                             {{-- <div class="product__color__select">
                                 <label for="pc-7">
                                     <input type="radio" id="pc-7">
@@ -389,20 +389,20 @@
                                     <input type="radio" id="pc-9">
                                 </label>
                             </div> --}}
-                        </div>
+                        {{-- </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-4.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-4.jpg"> --}}
                             {{-- <ul class="product__hover">
                                 <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
                             </ul> --}}
-                        </div>
+                        {{-- </div>
                         <div class="product__item__text">
-                            <h6>Diagonal Textured Cap</h6>
+                            <h6>Diagonal Textured Cap</h6> --}}
                             {{-- <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -411,7 +411,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div> --}}
-                            <h5>$60.9</h5>
+                            {{-- <h5>$60.9</h5> --}}
                             {{-- <div class="product__color__select">
                                 <label for="pc-10">
                                     <input type="radio" id="pc-10">
@@ -423,9 +423,9 @@
                                     <input type="radio" id="pc-12">
                                 </label>
                             </div> --}}
-                        </div>
+                        {{-- </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-5.jpg">
@@ -699,8 +699,8 @@
                         <div class="footer__logo">
                             <a href="/"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
                         </div>
-                        <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
-                            esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
+                        <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni
+                            esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità
                             fotografiche. </p>
                         <a href="/"><img src="img/welcome_img/payment.png" alt=""></a>
                     </div>
