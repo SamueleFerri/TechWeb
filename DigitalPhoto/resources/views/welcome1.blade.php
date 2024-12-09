@@ -53,7 +53,8 @@
             </div>
         </div> --}}
         <div class="offcanvas__nav__option">
-            @if (Route::has('login'))
+            <div class="offcanvas_btn-LoginRegister">
+                @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/dashboard') }}" class="primary-btn-LoginRegister">
                         Dashboard
@@ -68,7 +69,8 @@
                     </a>
                 @endif
                 @endauth
-            @endif
+                @endif
+            </div>
             {{-- <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
             <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
             <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
