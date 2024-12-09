@@ -1,5 +1,4 @@
 <?php
-
     use Illuminate\Support\Facades\DB;
 
     $albums = DB::select('SELECT * FROM albums');
