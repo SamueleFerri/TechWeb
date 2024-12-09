@@ -135,7 +135,7 @@
                                 </ul> --}}
                             </li>
                             <li><a href="courses">Corsi</a></li>
-                            <li><a href="abaut">Chi Siamo</a></li>
+                            <li><a href="about">Chi Siamo</a></li>
                         </ul>
                     </nav>
                 </div>

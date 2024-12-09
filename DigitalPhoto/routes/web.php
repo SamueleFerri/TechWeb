@@ -18,8 +18,8 @@ Route::get('/courses', function () {
     return view('courses');
 });
 
-Route::get('/abaut', function () {
-    return view('abaut');
+Route::get('/about', function () {
+    return view('about');
 });
 
 Route::get('/home', function () {

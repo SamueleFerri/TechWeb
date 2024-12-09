@@ -127,7 +127,7 @@
                             <li><a href="albums">Album</a></li>
                             <li><a href="gadgets">Accessori</a></li>
                             <li class="active"><a href="courses">Corsi</a></li>
-                            <li><a href="abaut">Chi Siamo</a></li>
+                            <li><a href="about">Chi Siamo</a></li>
                         </ul>
                     </nav>
                 </div>
