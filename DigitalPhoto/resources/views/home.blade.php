@@ -15,13 +15,13 @@
     <title>DigitalPhoto</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css">
+    {{-- <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('css/welcome_css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/owl.carousel.css') }}" type="text/css">
@@ -134,9 +134,12 @@
                     <nav class="header__menu mobile-menu">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="">
-                                    Dashboard
-                                </a>
+                                <a href="likes"> <i class="fa-solid fa-heart fa-lg" style="color:#bd6e6d;"></i> </a>
+                                <a href="bag"> <i class="fa-solid fa-bag-shopping fa-lg" style="color:#000000;"></i> </a>
+                                <a href=""> <i class="fa-solid fa-user fa-lg" style="color:#000000;"></i> </a>
+                                {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
+                                {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
+                                {{-- fare query_php --}}
                             @else
                                 <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                                     Login
