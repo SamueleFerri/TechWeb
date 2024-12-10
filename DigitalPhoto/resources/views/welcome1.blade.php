@@ -120,21 +120,33 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="/">Benvenuti</a></li>
-                            {{-- <li><a href="./shop.html">Shop</a></li> --}}
-                            {{-- <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li> --}}
-                            {{-- <li><a href="./blog.html">Blog</a></li> --}}
-                            <li><a href="about">Chi Siamo</a></li>
-                        </ul>
+                        @if (Route::has('login'))
+                        @auth
+                            <ul>
+                                <li><a href="home">Home</a></li>
+                                <li><a href="albums">Album</a></li>
+                                <li><a href="gadgets">Accessori</a></li>
+                                <li class="active"><a href="courses">Corsi</a></li>
+                                <li><a href="about">Chi Siamo</a></li>
+                            </ul>
+                        @else
+                            <ul>
+                                <li class="active"><a href="/">Benvenuti</a></li>
+                                {{-- <li><a href="./shop.html">Shop</a></li> --}}
+                                {{-- <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./about.html">About Us</a></li>
+                                        <li><a href="./shop-details.html">Shop Details</a></li>
+                                        <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                        <li><a href="./checkout.html">Check Out</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li> --}}
+                                {{-- <li><a href="./blog.html">Blog</a></li> --}}
+                                <li><a href="about">Chi Siamo</a></li>
+                            </ul>
+                        @endauth
+                        @endif
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">

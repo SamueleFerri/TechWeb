@@ -89,7 +89,10 @@ img {
 .about-img img {
 	height: 100%;
 	object-fit: contain;
-	margin-left: 55px;
+}
+
+.p-justify {
+	text-align: Justify;
 }
 
 input:focus,
