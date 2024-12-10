@@ -28,11 +28,11 @@ Route::get('/home', function () {
 
 Route::get('/bag', function () {
     return view('bag');
-});
+})->middleware(['auth', 'verified'])->name('bag');
 
 Route::get('/likes', function () {
     return view('likes');
-});
+})->middleware(['auth', 'verified'])->name('likes');
 
 Route::get('/gadgets', function () {
     return view('gadgets');
