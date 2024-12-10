@@ -72,11 +72,11 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="home">Home</a></li>
-                            <li><a href="albums">Album</a></li>
-                            <li><a href="gadgets">Accessori</a></li>
-                            <li><a href="courses">Corsi</a></li>
-                            <li class="active"><a href="about">Chi Siamo</a></li>
+                            <li> <a href="home"> Home </a> </li>
+                            <li> <a href="albums"> Album </a> </li>
+                            <li> <a href="gadgets"> Accessori </a> </li>
+                            <li> <a href="courses"> Corsi </a> </li>
+                            <li class="active"> <a href="about"> Chi Siamo </a> </li>
                         </ul>
                     </nav>
                 </div>

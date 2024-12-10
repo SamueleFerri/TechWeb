@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return view('welcome1');
+    return view('home');
 });
 
 Route::get('/albums', function () {
