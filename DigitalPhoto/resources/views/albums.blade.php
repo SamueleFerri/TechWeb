@@ -18,6 +18,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -387,20 +388,20 @@
                                     </div>
                                 </div>
                             </div> --}}
-                            <div class="card border-10 rounded-20 shadow" style="width: 210px; margin-bottom: 10px;">
+                            <div class="card border-10 rounded-20 shadow" style="width: 210px; height: 315px; margin-bottom: 10px; display: flex;">
                                 <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
                                 </div>
                                 <div class="product__item__text">
                                     <h5><?php echo $row->titolo ?></h5>
-                                    {{-- <h6><?php /* echo $row->descrizione */?></h6> --}}
+                                    <h6><?php echo $row->descrizione ?></h6>
                                 </div>
-                                <div class="row align-items-center text-center g-0" style="padding: 5px;">
-                                    <div class="col-4">
-                                        <h5>149$</h5>
+                                <div class="row align-items-center text-center g-0" style="padding: 7px; margin-top: auto;">
+                                    <div class="col-6">
+                                        <a href="likes"> <i class="fa-solid fa-heart fa-2xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
-                                    <div class="col-8">
-                                        <a href="bag" class="btn btn-dark p-3 w-100 rounded-0">Buy Now</a>
+                                    <div class="col-6">
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-2xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>

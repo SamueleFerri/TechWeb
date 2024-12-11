@@ -1084,7 +1084,7 @@ ol {
 }
 
 .product__item__text {
-	padding-top: 5px;
+	padding-top: 1px;
 	padding-left: 5px;
 	position: relative;
 }
@@ -1105,12 +1105,29 @@ ol {
 
 .product__item__text h6 {
 	color: #111111;
+	text-align: justify;
 	font-size: 15px;
 	font-weight: 600;
 	margin-bottom: 5px;
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
+	padding-left: 10px;
+	padding-right: 10px;
+	white-space: nowrap;       /* Evita la rottura della riga */
+    overflow: hidden;          /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis;   /* Aggiunge "..." */
+}
+
+.product__item__text:hover h6 {
+    white-space: normal; 						/* Rimuove il troncamento */
+    overflow: visible;
+	position: absolute;			 				/* La descrizione "fluttua" sopra */
+    background-color: #ffffff;					/* Sfondo per visibilità */
+    z-index: 10; 								/* Porta la descrizione in primo piano */
+    width: 100%; 								/* Occupa l'intera larghezza */
+    padding: 5px; 								/* Spazio extra per visibilità */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 		/* Ombra per evidenziare */
 }
 
 .product__item__text .rating {
@@ -1126,6 +1143,10 @@ ol {
 .product__item__text h5 {
 	color: #0d0d0d;
 	font-weight: 700;
+	text-align: justify;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
 }
 
 .product__item__text .product__color__select {
