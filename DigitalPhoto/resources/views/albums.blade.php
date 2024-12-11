@@ -18,6 +18,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
@@ -360,14 +364,46 @@
                             foreach ($albums as $row){
                         ?>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
+                            {{-- <div class="container p-5">
+                                <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
+                                    <img src="img/welcome_img/product/copertina_album<?php /* echo $row->id  */?>.png" class="card-img-top rounded-0" alt="...">
+                                    <div class="card-body my-3">
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <h4 class="card-title"><?php /* echo $row->titolo */ ?></h4>
+                                                <p class="card-text"><?php /* echo $row->descrizione */ ?></p>
+                                            </div>
+                                            <div class="col-2">
+                                                <i class="bi bi-bookmark-plus fs-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center text-center g-0">
+                                        <div class="col-4">
+                                            <h5>149$</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <a href="bag" class="btn btn-dark p-3 w-100 rounded-0">Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="card border-10 rounded-20 shadow" style="width: 210px; height: 315px; margin-bottom: 10px; display: flex;">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
                                 </div>
                                 <div class="product__item__text">
                                     <h5><?php echo $row->titolo ?></h5>
-                                    <h6><?php echo $row->descrizione?></h6>
-                                </div> 
+                                    <h6><?php echo $row->descrizione ?></h6>
+                                </div>
+                                <div class="row align-items-center text-center g-0" style="padding: 7px; margin-top: auto;">
+                                    <div class="col-6">
+                                        <a href="likes"> <i class="fa-solid fa-heart fa-2xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-2xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php
@@ -892,6 +928,12 @@
         </div>
     </div> --}}
     <!-- Search End -->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
