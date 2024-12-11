@@ -1007,7 +1007,7 @@ ol {
 } */
 
 .product__item__pic {
-	height: 260px;
+	height: 200px;
 	position: relative;
 	background-position: center center;
 }
@@ -1084,7 +1084,8 @@ ol {
 }
 
 .product__item__text {
-	padding-top: 25px;
+	padding-top: 5px;
+	padding-left: 5px;
 	position: relative;
 }
 
