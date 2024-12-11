@@ -438,7 +438,15 @@ ol {
 }
 .header__menu {
 	text-align: center;
-	padding: 30px 10px 25px;
+	padding: 30px 0px 25px;
+}
+
+.icon__header {
+	color: #09476F;
+	float: right;
+	margin-right: 20px;
+	margin-left: 5px;
+	padding-top: 5px;
 }
 
 .header__menu ul li {
@@ -3509,7 +3517,7 @@ ol {
 	.canvas__open {
 		display: block;
 		font-size: 22px;
-		color: #111111;
+		color: #09476F;
 		height: 35px;
 		width: 35px;
 		line-height: 35px;

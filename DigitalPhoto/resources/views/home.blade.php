@@ -134,9 +134,9 @@
                     <nav class="header__menu mobile-menu">
                         @if (Route::has('login'))
                             @auth
-                                <a href="likes"> <i class="fa-solid fa-heart fa-lg" style="color:#bd6e6d;"></i> </a>
-                                <a href="bag"> <i class="fa-solid fa-bag-shopping fa-lg" style="color:#000000;"></i> </a>
-                                <a href=""> <i class="fa-solid fa-user fa-lg" style="color:#000000;"></i> </a>
+                                <a class="icon__header" href=""> <i class="fa-solid fa-user fa-lg"></i> </a>
+                                <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
+                                <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
                                 {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
                                 {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
                                 {{-- fare query_php --}}

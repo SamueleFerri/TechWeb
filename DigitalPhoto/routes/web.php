@@ -8,7 +8,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/albums', function () {
     return view('albums');
@@ -22,9 +22,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 Route::get('/bag', function () {
     return view('bag');
