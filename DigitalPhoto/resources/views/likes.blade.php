@@ -106,10 +106,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Album</h4>
+                        <h4>Preferiti</h4>
                         <div class="breadcrumb__links">
                             <a href="home">Home</a>
-                            <span>Album</span>
+                            <span>Preferiti</span>
                         </div>
                     </div>
                 </div>
@@ -207,9 +207,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="product__pagination">
-                                <a class="active" href="albums">1</a>
-                                <a href="albums">2</a>
-                                <a href="albums">3</a>
+                                <a class="active" href="likes">1</a>
+                                <a href="likes">2</a>
+                                <a href="likes">3</a>
                             </div>
                         </div>
                     </div>
