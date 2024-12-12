@@ -134,9 +134,21 @@
                     <nav class="header__menu mobile-menu">
                         @if (Route::has('login'))
                             @auth
-                                <a class="icon__header" href=""> <i class="fa-solid fa-user fa-lg"></i> </a>
                                 <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
                                 <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                                <div class="dropdown__user icon__header">
+                                    <a> <i class="fa-solid fa-user fa-lg"></i> </a>
+                                    <div id="dropdownUser" class="dropdown__user__links">
+                                        <a href="{{ route('profile.edit') }}">Profilo</a>
+                                        {{-- <a href="#contact">Notifiche</a> --}}
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                Logout
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
                                 {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
                                 {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
                                 {{-- fare query_php --}}

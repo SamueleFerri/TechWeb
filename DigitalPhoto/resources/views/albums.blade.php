@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
@@ -121,7 +121,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="\"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -136,13 +136,45 @@
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        {{-- <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a> --}}
-                        <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a>
-                        <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
+                    <nav class="header__menu mobile-menu">
+                        @if (Route::has('login'))
+                            @auth
+                                <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
+                                <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                                <div class="dropdown__user icon__header">
+                                    <a> <i class="fa-solid fa-user fa-lg"></i> </a>
+                                    <div id="dropdownUser" class="dropdown__user__links">
+                                        <a href="{{ route('profile.edit') }}">Profilo</a>
+                                        {{-- <a href="#contact">Notifiche</a> --}}
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                Logout
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                                {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
+                                {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
+                                {{-- fare query_php --}}
+                            @else
+                                <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
+                                    Login
+                                </a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
+                                    Register
+                                </a>
+                            @endif
+                            @endauth
+                        @endif
+                    </nav>
+                    {{-- <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
-                        {{-- fare query_php --}}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
