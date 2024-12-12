@@ -364,33 +364,21 @@
                             foreach ($albums as $row){
                         ?>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                            {{-- <div class="container p-5">
-                                <div class="card border-0 rounded-0 shadow" style="width: 18rem;">
-                                    <img src="img/welcome_img/product/copertina_album<?php /* echo $row->id  */?>.png" class="card-img-top rounded-0" alt="...">
-                                    <div class="card-body my-3">
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <h4 class="card-title"><?php /* echo $row->titolo */ ?></h4>
-                                                <p class="card-text"><?php /* echo $row->descrizione */ ?></p>
-                                            </div>
-                                            <div class="col-2">
-                                                <i class="bi bi-bookmark-plus fs-2"></i>
-                                            </div>
-                                        </div>
+                            {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php /* echo $row->id;  */?>.png">
+                                        <span class="label">New</span>
                                     </div>
-                                    <div class="row align-items-center text-center g-0">
-                                        <div class="col-4">
-                                            <h5>149$</h5>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="bag" class="btn btn-dark p-3 w-100 rounded-0">Buy Now</a>
-                                        </div>
-                                    </div>
+                                    <div class="product__item__text">
+                                        <h5><?php /* echo $row->titolo  */?></h5>
+                                        <h6><?php /* echo $row->descrizione */?></h6>
+                                    </div> 
                                 </div>
                             </div> --}}
                             <div class="card border-10 rounded-20 shadow" style="width: 210px; height: 315px; margin-bottom: 10px; display: flex;">
                                 <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
+                                    <span class="prezzo"><?php echo $row->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
                                     <h5><?php echo $row->titolo ?></h5>
