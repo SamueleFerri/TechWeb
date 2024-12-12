@@ -18,6 +18,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
@@ -251,14 +255,22 @@
                             foreach ($gadgets as $row){
                         ?>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
+                            <div class="card border-10 rounded-20 shadow" style="width: 210px; height: 315px; margin-bottom: 10px; display: flex;">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
                                 </div>
                                 <div class="product__item__text">
-                                    {{-- <h5><?php #echo $row->titolo ?></h5> da aggiungere al DB --}}
-                                    <h6><?php echo $row->descrizione?></h6>
-                                </div> 
+                                    {{-- <h5><?php /* echo $row->titolo  */?></h5>  da aggiungere al db--}}
+                                    <h6><?php echo $row->descrizione ?></h6>
+                                </div>
+                                <div class="row align-items-center text-center g-0" style="padding: 7px; margin-top: auto;">
+                                    <div class="col-6">
+                                        <a href="likes"> <i class="fa-solid fa-heart fa-2xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-2xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php
