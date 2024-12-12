@@ -71,13 +71,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="home"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li> <a href="home"> Home </a> </li>
+                            <li> <a href="/"> Home </a> </li>
                             <li> <a href="albums"> Album </a> </li>
                             <li> <a href="gadgets"> Accessori </a> </li>
                             <li> <a href="courses"> Corsi </a> </li>
@@ -108,7 +108,7 @@
                     <div class="breadcrumb__text">
                         <h4>Preferiti</h4>
                         <div class="breadcrumb__links">
-                            <a href="home">Home</a>
+                            <a href="/">Home</a>
                             <span>Preferiti</span>
                         </div>
                     </div>
