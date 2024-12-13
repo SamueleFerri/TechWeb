@@ -1040,13 +1040,32 @@ ol {
 	visibility: visible;
 }
 
-/* .product__item:hover .product__item__text h6 {
-	opacity: 0;
-} */
+/* inizio gestione card */
 
-/* .product__item:hover .product__item__text .product__color__select {
-	opacity: 1;
-} */
+.card__item {
+	border-radius: 17px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+	width: 210px;
+	height: 340px;
+	margin-bottom: 10px;
+	display: flex;
+}
+
+.col-6 a i {
+	font-size: 2rem;
+}
+
+.row__icon {
+	display: flex;                /* Simile a Bootstrap row */
+	flex-wrap: wrap;              /* Permette agli elementi figli di andare a capo */
+	align-items: center;          /* Centra verticalmente il contenuto */
+	text-align: center;           /* Centra il testo orizzontalmente */
+	gap: 0;                       /* Simula il g-0 di Bootstrap */
+	padding: 7px;                 /* Spaziatura interna */
+	margin-top: auto;             /* Fa "spingere" il contenuto verso l'alto */
+  }
+
+/* fine gestione card */
 
 .product__item__pic {
 	height: 200px;
@@ -1076,7 +1095,6 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 4px 10px 0px;
-	background: #ffffff;
 	position: absolute;
 	right: 0;
 	top: 2px;
