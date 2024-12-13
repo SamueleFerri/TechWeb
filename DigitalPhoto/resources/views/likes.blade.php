@@ -2,7 +2,7 @@
     
     use Illuminate\Support\Facades\DB;
 
-    $likes = DB::select('SELECT a.id, a.titolo, a.descrizione FROM albums a JOIN albums_in_preferiti ap ON a.id = ap.albums_id
+    $likes = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_preferiti ap ON a.id = ap.albums_id
                             JOIN preferiti p ON ap.preferiti_id = p.id');
 ?>
 <!DOCTYPE html>
