@@ -1051,10 +1051,6 @@ ol {
 	display: flex;
 }
 
-.col-6 a i {
-	font-size: 2rem;
-}
-
 .row__icon {
 	display: flex;                /* Simile a Bootstrap row */
 	flex-wrap: wrap;              /* Permette agli elementi figli di andare a capo */
