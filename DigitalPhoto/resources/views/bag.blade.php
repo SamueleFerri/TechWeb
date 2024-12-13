@@ -240,21 +240,22 @@
                         <?php
                             foreach ($bag as $row){
                         ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                            <div class="card border-10 rounded-20 shadow" style="width: 210px; height: 315px; margin-bottom: 10px; display: flex;">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
+                            <div class="card card__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
+                                    <span class="prezzo"><?php echo $row->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
                                     <h5><?php echo $row->titolo ?></h5>
                                     <h6><?php echo $row->descrizione ?></h6>
                                 </div>
-                                <div class="row align-items-center text-center g-0" style="padding: 7px; margin-top: auto;">
+                                <div class="row row__icon">
                                     <div class="col-6">
-                                        <a href="likes"> <i class="fa-solid fa-heart fa-2xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-2xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>

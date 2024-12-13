@@ -1045,10 +1045,16 @@ ol {
 .card__item {
 	border-radius: 17px;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-	width: 210px;
+	width: 220px;
 	height: 340px;
 	margin-bottom: 10px;
 	display: flex;
+}
+
+.col__items__card {
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 5px;
 }
 
 .row__icon {

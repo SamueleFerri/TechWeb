@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
@@ -395,7 +395,7 @@
                         <?php
                             foreach ($albums as $row){
                         ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                                     <span class="label">New</span>
@@ -407,10 +407,10 @@
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <a href="likes"> <i class="fa-solid fa-heart fa-2xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-2xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>
