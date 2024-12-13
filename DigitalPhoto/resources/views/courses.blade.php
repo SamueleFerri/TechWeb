@@ -35,32 +35,10 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__nav__option">
-            @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/courses') }}" class="">
-                        Carrello
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="">
-                        Login
-                    </a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="">
-                    Register
-                    </a>
-                @endif
-                @endauth
-            @endif
-        </div>
         {{-- <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="#">Sign in</a>
@@ -74,14 +52,32 @@
                     <li>USD</li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
         <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <div class="offcanvas_btn-LoginRegister">
+                @if (Route::has('login'))
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="primary-btn-LoginRegister">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
+                        Login
+                    </a>
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
+                    Register
+                    </a>
+                @endif
+                @endauth
+                @endif
+            </div>
+            {{-- <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div> --}}
         </div>
-        <div id="mobile-menu-wrap"></div>
+        {{-- <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div> --}}
