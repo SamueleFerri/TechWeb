@@ -9,24 +9,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="description" content="DigitalPhoto">
+    <link rel="icon" type="image/x-icon" href="faviconDP.ico">
+    {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalPhoto</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+    
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css">
+    {{-- <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('css/welcome_css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/owl.carousel.css') }}" type="text/css">
