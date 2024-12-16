@@ -40,23 +40,46 @@
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
+        <nav class="mobile__menu">
+            <ul>
+                <li> <a href="\"> Home </a> </li>
+                <li> <a href="albums"> Album </a> </li>
+                <li> <a href="gadgets"> Accessori </a> </li>
+                <li> <a href="courses"> Corsi </a> </li>
+                <li> <a href="about"> Chi Siamo </a> </li>
+            </ul>
+        </nav>
         <div class="offcanvas__nav__option">
-            @if (Route::has('login'))
+            <div class="offcanvas_btn-LoginRegister">
+                @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/bag') }}" class="">
-                        Carrello
-                    </a>
+                    <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
+                    <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                    <div class="dropdown__user icon__header">
+                        <a> <i class="fa-solid fa-user fa-lg"></i> </a>
+                        <div class="dropdown__user__links">
+                            <a href="{{ route('profile.edit') }}">Profilo</a>
+                            {{-- <a href="#contact">Notifiche</a> --}}
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    Logout
+                                </a>
+                            </form>
+                        </div>
+                    </div>
                 @else
-                    <a href="{{ route('login') }}" class="">
+                    <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                         Login
                     </a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="">
+                    <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
                     Register
                     </a>
                 @endif
                 @endauth
-            @endif
+                @endif
+            </div>
         </div>
     </div>
     <!-- Offcanvas Menu End -->

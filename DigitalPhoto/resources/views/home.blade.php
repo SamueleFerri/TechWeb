@@ -67,9 +67,6 @@
                             </form>
                         </div>
                     </div>
-                    {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
-                    {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
-                    {{-- fare query_php --}}
                 @else
                     <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                         Login
@@ -82,10 +79,6 @@
                 @endauth
                 @endif
             </div>
-            {{-- <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div> --}}
         </div>
     </div>
     <!-- Offcanvas Menu End -->
