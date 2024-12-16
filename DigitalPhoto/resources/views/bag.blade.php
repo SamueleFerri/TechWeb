@@ -239,7 +239,6 @@
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
-                                    <span class="label">New</span>
                                     <span class="prezzo"><?php echo $row->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
