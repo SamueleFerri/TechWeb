@@ -185,6 +185,7 @@ ol {
 	padding: 8px 18px;
 	margin-left: 5px;
 	margin-right: 5px;
+	min-width: 85px;
 	color: #FFFFFF;
 	background: #BD6E6D;
 	border-radius: 5px;
@@ -436,9 +437,14 @@ ol {
 .header__logo a img {
 	max-width: 70%;
 }
+
 .header__menu {
 	text-align: center;
 	padding: 30px 0px 25px;
+}
+
+.mobile__menu {
+	padding: 30px 0px 25px 5px;
 }
 
 .icon__header {
@@ -460,7 +466,25 @@ ol {
 	position: relative;
 }
 
+.mobile__menu ul li {
+	list-style: none;
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 45px;
+	position: relative;
+}
+
+.mobile__menu ul {
+	max-width: 135px;
+}
+
 .header__menu ul li.active a:after {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.mobile__menu ul li.active a:after {
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
@@ -472,17 +496,23 @@ ol {
 	transform: scale(1);
 }
 
+.mobile__menu ul li:hover a:after {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
 .header__menu .dropdown__user {
 	float: right;
 	/* overflow: hidden; */
 }
 
-.header__menu .dropdown__user .dropdown__user__links {
+.dropdown__user__links {
 	display: none;
   	position: absolute;
   	background-color: #ffffff;
   	/* min-width: 160px; */
-  	box-shadow: 0px 8px 16px 0px 111111;
+  	box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
   	z-index: 2;
 }
 
@@ -554,7 +584,33 @@ ol {
 	text-decoration: none;
 }
 
+.mobile__menu ul li a {
+	font-size: 18px;
+	color: #111111;
+	display: block;
+	font-weight: 600;
+	position: relative;
+	padding: 3px 0;
+	text-decoration: none;
+}
+
 .header__menu ul li a:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 3px;
+	background: #BD6E6D;
+	content: "";
+	-webkit-transition: all, 0.5s;
+	-o-transition: all, 0.5s;
+	transition: all, 0.5s;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+
+.mobile__menu ul li a:after {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -3642,7 +3698,7 @@ ol {
 		width: 300px;
 		height: 100%;
 		background: #ffffff;
-		padding: 50px 20px 30px 30px;
+		padding: 10px 20px 20px 20px;
 		display: block;
 		z-index: 99;
 		overflow-y: auto;
@@ -3660,7 +3716,6 @@ ol {
 	}
 	.offcanvas_btn-LoginRegister {
 		float: left;
-		margin-left: 40px;
 	}
 	.slicknav_btn {
 		display: none;
@@ -3765,11 +3820,11 @@ ol {
 		text-align: center;
 		margin-bottom: 25px;
 	}
-	.offcanvas__nav__option a {
+	/* .offcanvas__nav__option a {
 		display: inline-block;
 		margin-right: 26px;
 		position: relative;
-	}
+	} */
 	.offcanvas__nav__option a span {
 		color: #0d0d0d;
 		font-size: 11px;
@@ -3777,9 +3832,9 @@ ol {
 		left: 5px;
 		top: 8px;
 	}
-	.offcanvas__nav__option a:last-child {
+	/* .offcanvas__nav__option a:last-child {
 		margin-right: 0;
-	}
+	} */
 	.offcanvas__nav__option .price {
 		font-size: 15px;
 		color: #111111;

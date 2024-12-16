@@ -140,7 +140,7 @@
                                 <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
                                 <div class="dropdown__user icon__header">
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
-                                    <div id="dropdownUser" class="dropdown__user__links">
+                                    <div class="dropdown__user__links">
                                         <a href="{{ route('profile.edit') }}">Profilo</a>
                                         {{-- <a href="#contact">Notifiche</a> --}}
                                         <form method="POST" action="{{ route('logout') }}">

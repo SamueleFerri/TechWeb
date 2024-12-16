@@ -38,27 +38,37 @@
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
-        {{-- <div class="offcanvas__option">
-            <div class="offcanvas__links">
-                <a href="#">Sign in</a>
-                <a href="#">FAQs</a>
-            </div>
-            <div class="offcanvas__top__hover">
-                <span>Usd <i class="arrow_carrot-down"></i></span>
-                <ul>
-                    <li>USD</li>
-                    <li>EUR</li>
-                    <li>USD</li>
-                </ul>
-            </div>
-        </div> --}}
+        <nav class="mobile__menu">
+            <ul>
+                <li class="active"> <a href="\"> Home </a> </li>
+                <li> <a href="albums"> Album </a> </li>
+                <li> <a href="gadgets"> Accessori </a> </li>
+                <li> <a href="courses"> Corsi </a> </li>
+                <li> <a href="about"> Chi Siamo </a> </li>
+            </ul>
+        </nav>
         <div class="offcanvas__nav__option">
             <div class="offcanvas_btn-LoginRegister">
                 @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="primary-btn-LoginRegister">
-                        Dashboard
-                    </a>
+                    <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
+                    <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                    <div class="dropdown__user icon__header">
+                        <a> <i class="fa-solid fa-user fa-lg"></i> </a>
+                        <div class="dropdown__user__links">
+                            <a href="{{ route('profile.edit') }}">Profilo</a>
+                            {{-- <a href="#contact">Notifiche</a> --}}
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    Logout
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                    {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
+                    {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
+                    {{-- fare query_php --}}
                 @else
                     <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                         Login
@@ -76,10 +86,6 @@
             <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div> --}}
         </div>
-        {{-- <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
-        </div> --}}
     </div>
     <!-- Offcanvas Menu End -->
 
@@ -120,7 +126,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
+                    <nav class="header__menu">
                         <ul>
                             <li class="active"> <a href="\"> Home </a> </li>
                             <li> <a href="albums"> Album </a> </li>
@@ -131,14 +137,14 @@
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <nav class="header__menu mobile-menu">
+                    <nav class="header__menu">
                         @if (Route::has('login'))
                             @auth
                                 <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
                                 <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
                                 <div class="dropdown__user icon__header">
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
-                                    <div id="dropdownUser" class="dropdown__user__links">
+                                    <div class="dropdown__user__links">
                                         <a href="{{ route('profile.edit') }}">Profilo</a>
                                         {{-- <a href="#contact">Notifiche</a> --}}
                                         <form method="POST" action="{{ route('logout') }}">
