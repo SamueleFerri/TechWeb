@@ -30,10 +30,10 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
+    {{-- <!-- Page Preloder -->
     <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> --}}
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
