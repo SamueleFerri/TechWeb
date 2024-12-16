@@ -1113,6 +1113,15 @@ ol {
 	margin-bottom: 5px;
 }
 
+.col__dipslay__card {
+	flex: 1 1 25%;
+	max-width: 28%;
+}
+
+.col__dipslay__card__home {
+	flex: 1 1 20%;
+	max-width: 21%;
+}
 .row__icon {
 	display: flex;                /* Simile a Bootstrap row */
 	flex-wrap: wrap;              /* Permette agli elementi figli di andare a capo */
@@ -3584,6 +3593,19 @@ ol {
 	.testimonial__text {
 		padding: 130px 45px 175px;
 	}
+
+	.col__dipslay__card {
+		flex: 1 1 25%;
+		max-width: 50%;
+	}
+
+	.col__dipslay__card__home {
+		flex: 1 1 25%;
+		max-width: 50%;
+	}
+	.container__card {
+		margin-right: 30px;
+	}
 }
 
 /* Tablet Device = 768px */
@@ -3654,6 +3676,19 @@ ol {
 	}
 	.footer__logo img {
 		max-width: 60%;
+	}
+
+	.col__dipslay__card {
+		flex: 1 1 20%;
+		max-width: 50%;
+	}
+
+	.col__dipslay__card__home {
+		flex: 1 1 25%;
+		max-width: 50%;
+	}
+	.container__card {
+		margin-right: 30px;
 	}
 }
 
@@ -3996,6 +4031,20 @@ ol {
 	}
 	.footer__logo img {
 		max-width: 60%;
+	}
+
+	.col__dipslay__card {
+		flex: 1 1 20%;
+		max-width: 41%;
+	}
+
+	.col__dipslay__card__home {
+		flex: 1 1 20%;
+		max-width: 41%;
+	}
+
+	.container__card {
+		margin-right: 0px;
 	}
 }
 

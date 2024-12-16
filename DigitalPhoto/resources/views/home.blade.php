@@ -290,50 +290,25 @@
                 <?php
                     foreach ($albums as $row){
                 ?>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id; ?>.png">
+                <div class="col__dipslay__card__home mix new-arrivals col__items__card">
+                    <div class="card card__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
                             <span class="label">New</span>
+                            <span class="prezzo"><?php echo $row->prezzo ?>$</span>
                         </div>
                         <div class="product__item__text">
                             <h5><?php echo $row->titolo ?></h5>
-                            <h6><?php echo $row->descrizione?></h6>
+                            <h6><?php echo $row->descrizione ?></h6>
+                        </div>
+                        <div class="row row__icon">
+                            <div class="col-6">
+                                <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                            </div>
                         </div>
                     </div>
-                        {{-- <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/product-1.jpg">
-                            <span class="label">New</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/welcome_img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/welcome_img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
-                        </div>
-
-
-                    </div> --}}
                 </div>
                 <?php
                     }
