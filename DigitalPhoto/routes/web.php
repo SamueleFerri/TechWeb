@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\LikeAlbumsController;
+use App\Http\Controllers\LikeCoursesController;
+use App\Http\Controllers\LikeGadgetsController;
 
 require __DIR__.'/auth.php';
 
@@ -49,3 +53,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+
+// Mostra gli articoli preferiti
+Route::get('/like', [LikeController::class, 'showLikes'])->name('like.show');
+// Rimuovi un elemento dai preferiti
+Route::post('/like/remove', [LikeController::class, 'removeFromLikes'])->name('like.remove');
+
+Route::post('/like-album', [LikeAlbumsController::class, 'toggleLike'])->name('like.albums.toggle');
+Route::post('/like-corso', [LikeCoursesController::class, 'toggleLike'])->name('like.courses.toggle');
+Route::post('/like-gadget', [LikeGadgetsController::class, 'toggleLike'])->name('like.gadgets.toggle');

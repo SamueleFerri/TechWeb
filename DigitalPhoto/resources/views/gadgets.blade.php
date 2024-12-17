@@ -282,6 +282,10 @@
                         <?php
                             foreach ($gadgets as $row){
                                 $cont++;
+                                $likeExists = DB::table('gadgets_in_preferiti')
+                                                ->where('gadgets_id', $row->id)
+                                                ->where('preferiti_id', Auth::id())
+                                                ->exists();
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
@@ -299,7 +303,11 @@
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <i 
+                                            class="fa-solid fa-heart fa-xl like-icon {{ $likeExists ? 'liked' : 'not-liked' }}" 
+                                            data-item-id="{{ $row->id }}" 
+                                            style="padding-top: 20px; padding-bottom: 15px; cursor: pointer;">
+                                        </i>
                                     </div>
                                     <div class="col-6">
                                         <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
@@ -405,6 +413,33 @@
         </div>
     </div> --}}
     <!-- Search End -->
+
+    <script>
+        document.querySelectorAll('.like-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const itemId = this.getAttribute('data-item-id');
+                const icon = this;
+    
+                fetch("{{ route('like.gadgets.toggle') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF per protezione
+                    },
+                    body: JSON.stringify({ item_id: itemId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        icon.classList.toggle('liked');
+                        icon.classList.toggle('not-liked');
+                    } else {
+                        alert('Errore durante l\'operazione di like.');
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>

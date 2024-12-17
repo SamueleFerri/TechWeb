@@ -2,8 +2,13 @@
     
     use Illuminate\Support\Facades\DB;
 
-    $likes = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_preferiti ap ON a.id = ap.albums_id
-                            JOIN preferiti p ON ap.preferiti_id = p.id');
+    $albums_like = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_preferiti ap ON a.id = ap.albums_id
+                                    JOIN preferiti p ON ap.preferiti_id = p.id');
+    
+    $gadgets_like = DB::select('SELECT g.id, g.descrizione, g.prezzo FROM gadgets g JOIN gadgets_in_preferiti gp ON g.id = gp.gadgets_id
+                                    JOIN preferiti p ON gp.preferiti_id = p.id');
+    $courses_like = DB::select('SELECT c.id, c.nome, c.descrizione, c.prezzo FROM corsi c JOIN corsi_in_preferiti cp ON c.id = cp.corsi_id
+                                    JOIN preferiti p ON cp.preferiti_id = p.id');
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -12,6 +17,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -257,20 +263,70 @@
                     </div>
                     <div class="row">
                         <?php
-                            foreach ($likes as $row){
+                            foreach ($albums_like as $album){
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
-                                    <span class="prezzo"><?php echo $row->prezzo ?>$</span>
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $album->id ?>.png">
+                                    <span class="prezzo"><?php echo $album->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
-                                    <h5><?php echo $row->titolo ?></h5>
-                                    <h6><?php echo $row->descrizione ?></h6>
+                                    <h5><?php echo $album->titolo ?></h5>
+                                    <h6><?php echo $album->descrizione ?></h6>
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color:#bd6e6d; cursor:pointer;"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            foreach ($gadgets_like as $gadget){
+                        ?>
+                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
+                            <div class="card card__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $gadget->id ?>.png">
+                                    <span class="prezzo"><?php echo $gadget->prezzo ?>$</span>
+                                </div>
+                                <div class="product__item__text">
+                                    {{-- <h5><?php /* echo $row->titolo  */?></h5> --}}
+                                    <h6><?php echo $gadget->descrizione ?></h6>
+                                </div>
+                                <div class="row row__icon">
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#bd6e6d; cursor:pointer;"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            foreach ($courses_like as $course){
+                        ?>
+                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
+                            <div class="card card__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $course->id ?>.png">
+                                    <span class="prezzo"><?php echo $course->prezzo ?>$</span>
+                                </div>
+                                <div class="product__item__text">
+                                    <h5><?php echo $course->nome ?></h5>
+                                    <h6><?php echo $course->descrizione ?></h6>
+                                </div>
+                                <div class="row row__icon">
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $course->id }}" data-item-type="courses" style="color:#bd6e6d; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
                                         <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
@@ -343,6 +399,50 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.like-icon').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    const itemId = this.getAttribute('data-item-id');
+                    const itemType = this.getAttribute('data-item-type');
+                    const icon = this;
+
+                    console.log(`Rimuovo il like per ${itemType} con ID: ${itemId}`);
+
+                    // Invio della richiesta AJAX a Laravel
+                    fetch('/like/remove', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Token CSRF di Laravel
+                        },
+                        body: JSON.stringify({
+                            item_id: itemId,
+                            item_type: itemType
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Like rimosso con successo!');
+
+                            // Troviamo e rimuoviamo il genitore .col__dipslay__card
+                            const parentElement = icon.closest('.col__dipslay__card');
+                            if (parentElement) {
+                                parentElement.remove();
+                            } else {
+                                console.warn('Elemento non trovato per la rimozione.');
+                            }
+                        } else {
+                            console.warn('Errore durante la rimozione del like:', data.message);
+                        }
+                    })
+                    .catch(error => console.error('Errore durante la rimozione:', error));
+                });
+            });
+        });
+    </script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

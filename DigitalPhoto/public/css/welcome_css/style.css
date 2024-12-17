@@ -1134,6 +1134,14 @@ ol {
 
 /* fine gestione card */
 
+.liked {
+	color: #bd6e6d !important; /* Cambia il colore se l'elemento è likato */
+}
+
+.not-liked {
+	color: #09476F !important; /* Colore di default se non è likato */
+}
+
 .product__item__pic {
 	height: 200px;
 	position: relative;
