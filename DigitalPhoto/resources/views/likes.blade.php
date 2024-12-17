@@ -400,55 +400,11 @@
     </footer>
     <!-- Footer Section End -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.like-icon').forEach(icon => {
-                icon.addEventListener('click', function () {
-                    const itemId = this.getAttribute('data-item-id');
-                    const itemType = this.getAttribute('data-item-type');
-                    const icon = this;
-
-                    console.log(`Rimuovo il like per ${itemType} con ID: ${itemId}`);
-
-                    // Invio della richiesta AJAX a Laravel
-                    fetch('/like/remove', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Token CSRF di Laravel
-                        },
-                        body: JSON.stringify({
-                            item_id: itemId,
-                            item_type: itemType
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            console.log('Like rimosso con successo!');
-
-                            // Troviamo e rimuoviamo il genitore .col__dipslay__card
-                            const parentElement = icon.closest('.col__dipslay__card');
-                            if (parentElement) {
-                                parentElement.remove();
-                            } else {
-                                console.warn('Elemento non trovato per la rimozione.');
-                            }
-                        } else {
-                            console.warn('Errore durante la rimozione del like:', data.message);
-                        }
-                    })
-                    .catch(error => console.error('Errore durante la rimozione:', error));
-                });
-            });
-        });
-    </script>
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scrip>
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
@@ -461,6 +417,7 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/like_for_views/likes.js') }}"></script>
 </body>
 
 </html>

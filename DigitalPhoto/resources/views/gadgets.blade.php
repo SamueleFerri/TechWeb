@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -414,33 +415,6 @@
     </div> --}}
     <!-- Search End -->
 
-    <script>
-        document.querySelectorAll('.like-icon').forEach(icon => {
-            icon.addEventListener('click', function() {
-                const itemId = this.getAttribute('data-item-id');
-                const icon = this;
-    
-                fetch("{{ route('like.gadgets.toggle') }}", {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF per protezione
-                    },
-                    body: JSON.stringify({ item_id: itemId })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        icon.classList.toggle('liked');
-                        icon.classList.toggle('not-liked');
-                    } else {
-                        alert('Errore durante l\'operazione di like.');
-                    }
-                });
-            });
-        });
-    </script>
-
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('js/welcome_js/bootstrap.js') }}"></script>
@@ -452,6 +426,7 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/like_for_views/gadgets.js') }}"></script>
 </body>
 
 </html>
