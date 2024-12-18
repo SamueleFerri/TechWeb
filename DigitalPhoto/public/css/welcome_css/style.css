@@ -1271,11 +1271,11 @@ ol {
     white-space: normal; 						/* Rimuove il troncamento */
     overflow: visible;
 	position: absolute;			 				/* La descrizione "fluttua" sopra */
-    background-color: #ffffff;					/* Sfondo per visibilità */
+    background-color: #ffffff;				   /* Sfondo per visibilità */
     z-index: 10; 								/* Porta la descrizione in primo piano */
     width: 100%; 								/* Occupa l'intera larghezza */
     padding: 5px; 								/* Spazio extra per visibilità */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 		/* Ombra per evidenziare */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);    /* Ombra per evidenziare */
 }
 
 .product__item__text .rating {

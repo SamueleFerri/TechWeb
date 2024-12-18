@@ -6,7 +6,7 @@
     $albums = DB::select('SELECT * FROM albums');
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">

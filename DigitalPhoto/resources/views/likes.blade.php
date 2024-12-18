@@ -11,7 +11,7 @@
                                     JOIN preferiti p ON cp.preferiti_id = p.id');
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">

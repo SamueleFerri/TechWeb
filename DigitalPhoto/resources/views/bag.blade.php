@@ -6,7 +6,7 @@
                             JOIN carrelli c ON ac.carrelli_id = c.id');
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
