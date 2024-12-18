@@ -2,8 +2,12 @@
     
     use Illuminate\Support\Facades\DB;
 
-    $bag = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_carrelli ac ON a.id = ac.carrelli_id
-                            JOIN carrelli c ON ac.carrelli_id = c.id');
+    $albums_bag = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_carrelli ac ON a.id = ac.carrelli_id
+                                JOIN carrelli c ON ac.carrelli_id = c.id');
+    $gadgets_bag = DB::select('SELECT g.id, g.descrizione, g.prezzo FROM gadgets g JOIN gadgets_in_carrelli gc ON g.id = gc.gadgets_id
+                                    JOIN carrelli c ON gc.carrelli_id = c.id');
+    $courses_bag = DB::select('SELECT c.id, c.nome, c.descrizione, c.prezzo FROM corsi c JOIN corsi_in_carrelli cc ON c.id = cc.corsi_id
+                                    JOIN carrelli ca ON cc.carrelli_id = ca.id');
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -12,6 +16,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -257,23 +262,73 @@
                     </div>
                     <div class="row">
                         <?php
-                            foreach ($bag as $row){
+                            foreach ($albums_bag as $album){
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $row->id ?>.png">
-                                    <span class="prezzo"><?php echo $row->prezzo ?>$</span>
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $album->id ?>.png">
+                                    <span class="prezzo"><?php echo $album->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
-                                    <h5><?php echo $row->titolo ?></h5>
-                                    <h6><?php echo $row->descrizione ?></h6>
+                                    <h5><?php echo $album->titolo ?></h5>
+                                    <h6><?php echo $album->descrizione ?></h6>
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color: black; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color:#bd6e6d; cursor:pointer;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            foreach ($gadgets_bag as $gadget){
+                        ?>
+                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
+                            <div class="card card__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $gadget->id ?>.png">
+                                    <span class="prezzo"><?php echo $gadget->prezzo ?>$</span>
+                                </div>
+                                <div class="product__item__text">
+                                    {{-- <h5><?php /* echo $row->titolo  */?></h5> --}}
+                                    <h6><?php echo $gadget->descrizione ?></h6>
+                                </div>
+                                <div class="row row__icon">
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:black; cursor:pointer;"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#bd6e6d; cursor:pointer;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            foreach ($courses_bag as $course){
+                        ?>
+                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
+                            <div class="card card__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $course->id ?>.png">
+                                    <span class="prezzo"><?php echo $course->prezzo ?>$</span>
+                                </div>
+                                <div class="product__item__text">
+                                    <h5><?php echo $course->nome ?></h5>
+                                    <h6><?php echo $course->descrizione ?></h6>
+                                </div>
+                                <div class="row row__icon">
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $course->id }}" data-item-type="courses" style="color:#bd6e6d; cursor:pointer;"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $course->id }}" data-item-type="courses" style="color:#bd6e6d; cursor:pointer;"></i>
                                     </div>
                                 </div>
                             </div>
@@ -361,6 +416,7 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/bag_for_views/bag.js') }}"></script>
 </body>
 
 </html>

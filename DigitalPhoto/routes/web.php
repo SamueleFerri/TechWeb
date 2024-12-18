@@ -7,6 +7,10 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LikeAlbumsController;
 use App\Http\Controllers\LikeCoursesController;
 use App\Http\Controllers\LikeGadgetsController;
+use App\Http\Controllers\BagController;
+use App\Http\Controllers\BagAlbumsController;
+use App\Http\Controllers\BagCoursesController;
+use App\Http\Controllers\BagGadgetsController;
 
 require __DIR__.'/auth.php';
 
@@ -59,6 +63,21 @@ Route::get('/like', [LikeController::class, 'showLikes'])->name('like.show');
 // Rimuovi un elemento dai preferiti
 Route::post('/like/remove', [LikeController::class, 'removeFromLikes'])->name('like.remove');
 
-Route::post('/like-album', [LikeAlbumsController::class, 'toggleLike'])->name('like.albums.toggle');
+// Mostra gli articolii in carrelli
+Route::get('/bag', [BagController::class, 'showBags'])->name('bag.show');
+// Rimuovi un elemento dai carrelli
+Route::post('/bag/remove', [BagController::class, 'removeFromBags'])->name('bag.remove');
+
+/* Route::post('/like-album', [LikeAlbumsController::class, 'toggleLike'])->name('like.albums.toggle');
 Route::post('/like-corso', [LikeCoursesController::class, 'toggleLike'])->name('like.courses.toggle');
 Route::post('/like-gadget', [LikeGadgetsController::class, 'toggleLike'])->name('like.gadgets.toggle');
+Route::post('/bag-album', [BagAlbumsController::class, 'toggleBag'])->name('bag.albums.toggle');
+ */
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::post('/like-album', [LikeAlbumsController::class, 'toggleLike'])->name('like.albums.toggle');
+    Route::post('/like-corso', [LikeCoursesController::class, 'toggleLike'])->name('like.courses.toggle');
+    Route::post('/like-gadget', [LikeGadgetsController::class, 'toggleLike'])->name('like.gadgets.toggle');
+    Route::post('/bag-album', [BagAlbumsController::class, 'toggleBag'])->name('bag.albums.toggle');
+    Route::post('/bag-corso', [BagCoursesController::class, 'toggleBag'])->name('bag.courses.toggle');
+    Route::post('/bag-gadget', [BagGadgetsController::class, 'toggleBag'])->name('bag.courses.toggle');
+});
