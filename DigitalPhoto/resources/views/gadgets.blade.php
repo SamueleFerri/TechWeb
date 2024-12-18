@@ -287,6 +287,10 @@
                                                 ->where('gadgets_id', $row->id)
                                                 ->where('preferiti_id', Auth::id())
                                                 ->exists();
+                                $bagExists = DB::table('gadgets_in_carrelli')
+                                                ->where('gadgets_id', $row->id)
+                                                ->where('carrelli_id', Auth::id())
+                                                ->exists();
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
@@ -311,7 +315,11 @@
                                         </i>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <i 
+                                            class="fa-solid fa-bag-shopping fa-xl bag-icon {{ $bagExists ? 'inbag' : 'not-inbag' }}" 
+                                            data-item-id="{{ $row->id }}" 
+                                            style="padding-top: 20px; padding-bottom: 15px; cursor: pointer;">
+                                        </i>
                                     </div>
                                 </div>
                             </div>
@@ -427,6 +435,7 @@
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
     <script src="{{ asset('js/like_for_views/gadgets.js') }}"></script>
+    <script src="{{ asset('js/bag_for_views/bag_gadgets.js') }}"></script>
 </body>
 
 </html>

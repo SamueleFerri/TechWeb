@@ -299,14 +299,14 @@
                             <h5><?php echo $row->titolo ?></h5>
                             <h6><?php echo $row->descrizione ?></h6>
                         </div>
-                        <div class="row row__icon">
+                        {{-- <div class="row row__icon">
                             <div class="col-6">
                                 <a href="likes"> <i class="fa-solid fa-heart fa-xl" style="color:#bd6e6d; padding-top: 20px; padding-bottom: 15px;"></i></a>
                             </div>
                             <div class="col-6">
                                 <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <?php

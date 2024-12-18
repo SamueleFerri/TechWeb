@@ -1143,6 +1143,14 @@ ol {
 	color: #09476F !important; /* Colore di default se non è likato */
 }
 
+.inbag {
+	color: #bd6e6d !important; /* Cambia il colore se l'elemento è inbag */
+}
+
+.not-inbag {
+	color: #09476F !important; /* Colore di default se non è inbag */
+}
+
 .product__item__pic {
 	height: 200px;
 	position: relative;
