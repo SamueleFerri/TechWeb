@@ -32,7 +32,7 @@
 
         <!-- Address -->
         <div class="mt-4">
-            <x-input-label for="address" :value="__('Email')" />
+            <x-input-label for="address" :value="__('Indirizzo')" />
             <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
             <x-input-error :messages="$errors->get('address')" class="mt-2" />
         </div>

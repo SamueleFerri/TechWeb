@@ -80,7 +80,7 @@
                     </a>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
-                    Register
+                        Registrati
                     </a>
                 @endif
                 @endauth
@@ -165,7 +165,7 @@
                                 </a>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="primary-btn-LoginRegister">
-                                    Register
+                                    Registrati
                                 </a>
                             @endif
                             @endauth

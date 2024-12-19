@@ -26,11 +26,11 @@
 </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 dark:bg-gray-900" style="background: rgb(9,71,111); background: linear-gradient(90deg, rgba(9,71,111,1) 25%, rgba(189,110,109,1) 75%);" >
-            <div style="max-width: 25%;">
+            <div style="max-width: 25%; margin-top: 20px;">
                 <a href="/"><img src="img/welcome_img/DPLogo_noback.png" alt=""></a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg" style="margin-bottom: 20px;">
                 {{ $slot }}
             </div>
         </div>
