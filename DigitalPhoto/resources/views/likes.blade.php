@@ -279,7 +279,7 @@
                                         <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color:#bd6e6d; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#09476F; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@
                                         <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#bd6e6d; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#09476F; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -329,7 +329,7 @@
                                         <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $course->id }}" data-item-type="courses" style="color:#bd6e6d; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
-                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#000000; padding-top: 20px; padding-bottom: 15px;"></i></a>
+                                        <a href="bag"> <i class="fa-solid fa-bag-shopping fa-xl" style="color:#09476F; padding-top: 20px; padding-bottom: 15px;"></i></a>
                                     </div>
                                 </div>
                             </div>

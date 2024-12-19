@@ -275,7 +275,7 @@
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color: black; cursor:pointer;"></i>
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color: #09476F; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
                                         <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color:#bd6e6d; cursor:pointer;"></i>
@@ -300,7 +300,7 @@
                                 </div>
                                 <div class="row row__icon">
                                     <div class="col-6">
-                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:black; cursor:pointer;"></i>
+                                        <i class="fa-solid fa-heart fa-xl like-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#09476F; cursor:pointer;"></i>
                                     </div>
                                     <div class="col-6">
                                         <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#bd6e6d; cursor:pointer;"></i>
