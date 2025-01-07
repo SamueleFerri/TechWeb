@@ -10,30 +10,31 @@ class LikeAlbumsController extends Controller
 {
     public function toggleLike(Request $request)
     {
-        $userId = Auth::id(); // Ottieni l'ID dell'utente loggato
+        $preferiti_list = DB::select('SELECT id FROM preferiti WHERE user_id = ?', [Auth::id()]);
+        $preferiti_id = $preferiti_list[0]->id ?? null;
         $albumId = $request->input('item_id');
 
-        if (!$userId || !$albumId) {
+        if (!$preferiti_id || !$albumId) {
             return response()->json(['success' => false, 'message' => 'Dati non validi']);
         }
 
         // Controlla se il like esiste
         $likeExists = DB::table('albums_in_preferiti')
             ->where('albums_id', $albumId)
-            ->where('preferiti_id', $userId) // Supponiamo che il campo `preferiti_id` sia collegato all'utente
+            ->where('preferiti_id', $preferiti_id)
             ->exists();
 
         if ($likeExists) {
             // Se il like esiste, rimuovilo
             DB::table('albums_in_preferiti')
                 ->where('albums_id', $albumId)
-                ->where('preferiti_id', $userId)
+                ->where('preferiti_id', $preferiti_id)
                 ->delete();
         } else {
             // Altrimenti, aggiungilo
             DB::table('albums_in_preferiti')->insert([
                 'albums_id' => $albumId,
-                'preferiti_id' => $userId
+                'preferiti_id' => $preferiti_id
             ]);
         }
 

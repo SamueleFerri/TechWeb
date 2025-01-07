@@ -2,7 +2,7 @@
     
     use Illuminate\Support\Facades\DB;
 
-    $albums_bag = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_carrelli ac ON a.id = ac.carrelli_id
+    $albums_bag = DB::select('SELECT a.id, a.titolo, a.descrizione, a.prezzo FROM albums a JOIN albums_in_carrelli ac ON a.id = ac.albums_id
                                 JOIN carrelli c ON ac.carrelli_id = c.id');
     $gadgets_bag = DB::select('SELECT g.id, g.descrizione, g.prezzo FROM gadgets g JOIN gadgets_in_carrelli gc ON g.id = gc.gadgets_id
                                     JOIN carrelli c ON gc.carrelli_id = c.id');

@@ -430,7 +430,7 @@
                                     <div class="col-6">
                                         <i 
                                             class="fa-solid fa-bag-shopping fa-xl bag-icon {{ $bagExists ? 'inbag' : 'not-inbag' }}" 
-                                            data-item-id="{{ $row->id }}" 
+                                            data-item-id="{{ $row->id }}"
                                             style="padding-top: 20px; padding-bottom: 15px; cursor: pointer;">
                                         </i>
                                     </div>

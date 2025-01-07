@@ -15,25 +15,25 @@ class BagController extends Controller
      */
     public function showBags()
     {
-        // Recupera tutti gli album, corsi e gadgets che l'utente ha nei carrelli
-        $userId = Auth::id();
+        $carrelli_list = DB::select('SELECT id FROM carrelli WHERE user_id = ?', [Auth::id()]);
+        $carrelli_id = $carrelli_list[0]->id ?? null; 
 
         // Album carrelli
         $albums = DB::table('albums')
             ->join('albums_in_carrelli', 'albums.id', '=', 'albums_in_carrelli.albums_id')
-            ->where('albums_in_carrelli.carrelli_id', $userId)
+            ->where('albums_in_carrelli.carrelli_id', $carrelli_id)
             ->get();
 
         // Corsi carrelli
         $corsi = DB::table('corsi')
             ->join('corsi_in_carrelli', 'corsi.id', '=', 'corsi_in_carrelli.corsi_id')
-            ->where('corsi_in_carrelli.carrelli_id', $userId)
+            ->where('corsi_in_carrelli.carrelli_id', $carrelli_id)
             ->get();
 
         // Gadgets carrelli
         $gadgets = DB::table('gadgets')
             ->join('gadgets_in_carrelli', 'gadgets.id', '=', 'gadgets_in_carrelli.gadgets_id')
-            ->where('gadgets_in_carrelli.carrelli_id', $userId)
+            ->where('gadgets_in_carrelli.carrelli_id', $carrelli_id)
             ->get();
 
         // Passa i dati alla vista
@@ -49,7 +49,8 @@ class BagController extends Controller
     public function removeFromBags(Request $request)
     {
         try {
-            $userId = Auth::id();
+            $carrelli_list = DB::select('SELECT id FROM carrelli WHERE user_id = ?', [Auth::id()]);
+            $carrelli_id = $carrelli_list[0]->id ?? null; 
             $itemId = $request->input('item_id');
             $itemType = $request->input('item_type'); // album, corso, gadget
 
@@ -63,26 +64,21 @@ class BagController extends Controller
                 case 'albums':
                     $deleted = DB::table('albums_in_carrelli')
                         ->where('albums_id', $itemId)
-                        ->where('carrelli_id', function ($query) use ($userId) {
-                            $query->select('id')
-                                  ->from('carrelli')
-                                  ->where('user_id', $userId)
-                                  ->limit(1);
-                        })
+                        ->where('carrelli_id', $carrelli_id)
                         ->delete();
                     break;
 
                 case 'courses':
                     $deleted = DB::table('corsi_in_carrelli')
                         ->where('corsi_id', $itemId)
-                        ->where('carrelli_id', $userId)
+                        ->where('carrelli_id', $carrelli_id)
                         ->delete();
                     break;
 
                 case 'gadgets':
                     $deleted = DB::table('gadgets_in_carrelli')
                         ->where('gadgets_id', $itemId)
-                        ->where('carrelli_id', $userId)
+                        ->where('carrelli_id', $carrelli_id)
                         ->delete();
                     break;
 

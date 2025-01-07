@@ -15,25 +15,25 @@ class LikeController extends Controller
      */
     public function showLikes()
     {
-        // Recupera tutti gli album, corsi e gadgets che l'utente ha nei preferiti
-        $userId = Auth::id();
+        $preferiti_list = DB::select('SELECT id FROM preferiti WHERE user_id = ?', [Auth::id()]);
+        $preferiti_id = $preferiti_list[0]->id ?? null;
 
         // Album preferiti
         $albums = DB::table('albums')
             ->join('albums_in_preferiti', 'albums.id', '=', 'albums_in_preferiti.albums_id')
-            ->where('albums_in_preferiti.preferiti_id', $userId)
+            ->where('albums_in_preferiti.preferiti_id', $preferiti_id)
             ->get();
 
         // Corsi preferiti
         $corsi = DB::table('corsi')
             ->join('corsi_in_preferiti', 'corsi.id', '=', 'corsi_in_preferiti.corsi_id')
-            ->where('corsi_in_preferiti.preferiti_id', $userId)
+            ->where('corsi_in_preferiti.preferiti_id', $preferiti_id)
             ->get();
 
         // Gadgets preferiti
         $gadgets = DB::table('gadgets')
             ->join('gadgets_in_preferiti', 'gadgets.id', '=', 'gadgets_in_preferiti.gadgets_id')
-            ->where('gadgets_in_preferiti.preferiti_id', $userId)
+            ->where('gadgets_in_preferiti.preferiti_id', $preferiti_id)
             ->get();
 
         // Passa i dati alla vista
@@ -49,7 +49,8 @@ class LikeController extends Controller
     public function removeFromLikes(Request $request)
     {
         try {
-            $userId = Auth::id();
+            $preferiti_list = DB::select('SELECT id FROM preferiti WHERE user_id = ?', [Auth::id()]);
+            $preferiti_id = $preferiti_list[0]->id ?? null;
             $itemId = $request->input('item_id');
             $itemType = $request->input('item_type'); // album, corso, gadget
 
@@ -63,26 +64,21 @@ class LikeController extends Controller
                 case 'albums':
                     $deleted = DB::table('albums_in_preferiti')
                         ->where('albums_id', $itemId)
-                        ->where('preferiti_id', function ($query) use ($userId) {
-                            $query->select('id')
-                                  ->from('preferiti')
-                                  ->where('user_id', $userId)
-                                  ->limit(1);
-                        })
+                        ->where('preferiti_id', $preferiti_id)
                         ->delete();
                     break;
 
                 case 'courses':
                     $deleted = DB::table('corsi_in_preferiti')
                         ->where('corsi_id', $itemId)
-                        ->where('preferiti_id', $userId)
+                        ->where('preferiti_id', $preferiti_id)
                         ->delete();
                     break;
 
                 case 'gadgets':
                     $deleted = DB::table('gadgets_in_preferiti')
                         ->where('gadgets_id', $itemId)
-                        ->where('preferiti_id', $userId)
+                        ->where('preferiti_id', $preferiti_id)
                         ->delete();
                     break;
 
