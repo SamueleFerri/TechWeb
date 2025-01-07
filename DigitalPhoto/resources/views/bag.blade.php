@@ -338,6 +338,9 @@
                         ?>
                     </div>
                     <div class="row">
+                        <a href="/" class="primary-btn buy">Conferma Ordine</a>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="product__pagination">
                                 <a class="active" href="bag">1</a>

@@ -1135,6 +1135,17 @@ ol {
 
 /* fine gestione card */
 
+.buy {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center; 
+	gap: 0;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+
 .liked {
 	color: #bd6e6d !important; /* Cambia il colore se l'elemento è likato */
 }
