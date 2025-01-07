@@ -392,13 +392,17 @@
                         <?php
                             foreach ($albums as $row){
                                 $cont++;
+                                $preferiti_list = DB::select('SELECT id FROM preferiti WHERE user_id = ?', [Auth::id()]);
+                                $carrelli_list = DB::select('SELECT id FROM carrelli WHERE user_id = ?', [Auth::id()]);
+                                $preferiti_id = $preferiti_list[0]->id ?? null;
+                                $carrelli_id = $carrelli_list[0]->id ?? null; 
                                 $likeExists = DB::table('albums_in_preferiti')
                                                 ->where('albums_id', $row->id)
-                                                ->where('preferiti_id', Auth::id())
+                                                ->where('preferiti_id', $preferiti_id)
                                                 ->exists();
                                 $bagExists = DB::table('albums_in_carrelli')
                                                 ->where('albums_id', $row->id)
-                                                ->where('carrelli_id', Auth::id())
+                                                ->where('carrelli_id', $carrelli_id)
                                                 ->exists();
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
