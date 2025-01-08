@@ -38,6 +38,10 @@ Route::get('/bag', function () {
     return view('bag');
 })->middleware(['auth', 'verified'])->name('bag');
 
+Route::get('/order', function () {
+    return view('order');
+})->middleware(['auth', 'verified'])->name('order');
+
 Route::get('/likes', function () {
     return view('likes');
 })->middleware(['auth', 'verified'])->name('likes');

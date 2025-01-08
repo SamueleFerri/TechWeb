@@ -91,33 +91,6 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        {{-- <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="container__header">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
@@ -170,12 +143,6 @@
                             @endauth
                         @endif
                     </nav>
-                    {{-- <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div> --}}
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
@@ -189,10 +156,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Carrello</h4>
+                        <h4>Conferma Ordine</h4>
                         <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <span>Carrello</span>
+                            <a href="bag">Carrello</a>
+                            <span>Conferma Ordine</span>
                         </div>
                     </div>
                 </div>
@@ -202,157 +169,6 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Shop Section Begin -->
-    <section class="shop spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="shop__sidebar">
-                        <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
-                            </form>
-                        </div>
-                        <div class="shop__sidebar__accordion">
-                            <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__price">
-                                                <ul>
-                                                    <li><a href="#">$0.00 - $50.00</a></li>
-                                                    <li><a href="#">$50.00 - $100.00</a></li>
-                                                    <li><a href="#">$100.00 - $150.00</a></li>
-                                                    <li><a href="#">$150.00 - $200.00</a></li>
-                                                    <li><a href="#">$200.00 - $250.00</a></li>
-                                                    <li><a href="#">250.00+</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="shop__product__option">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__left">
-                                    {{-- <p>Showing 1–12 of 126 results</p> --}}
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__right">
-                                    <p>Sort by Price:</p>
-                                    <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">High To Low</option>
-                                        {{-- add query_php --}}
-                                        {{-- <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option> --}}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <?php
-                            foreach ($albums_bag as $album){
-                        ?>
-                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
-                            <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $album->id ?>.png">
-                                    <span class="prezzo"><?php echo $album->prezzo ?>$</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h5><?php echo $album->titolo ?></h5>
-                                    <h6><?php echo $album->descrizione ?></h6>
-                                </div>
-                                <div class="row row__icon">
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-heart fa-xl like-icon" style="color:#09476F; cursor:pointer;"></i>
-                                    </div>
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $album->id }}" data-item-type="albums" style="color:#bd6e6d; cursor:pointer;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            foreach ($gadgets_bag as $gadget){
-                        ?>
-                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
-                            <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $gadget->id ?>.png">
-                                    <span class="prezzo"><?php echo $gadget->prezzo ?>$</span>
-                                </div>
-                                <div class="product__item__text">
-                                    {{-- <h5><?php /* echo $row->titolo  */?></h5> --}}
-                                    <h6><?php echo $gadget->descrizione ?></h6>
-                                </div>
-                                <div class="row row__icon">
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-heart fa-xl like-icon" style="color:#09476F; cursor:pointer;"></i>
-                                    </div>
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $gadget->id }}" data-item-type="gadgets" style="color:#bd6e6d; cursor:pointer;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            foreach ($courses_bag as $course){
-                        ?>
-                        <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
-                            <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $course->id ?>.png">
-                                    <span class="prezzo"><?php echo $course->prezzo ?>$</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h5><?php echo $course->nome ?></h5>
-                                    <h6><?php echo $course->descrizione ?></h6>
-                                </div>
-                                <div class="row row__icon">
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-heart fa-xl like-icon" style="color:#09476F; cursor:pointer;"></i>
-                                    </div>
-                                    <div class="col-6">
-                                        <i class="fa-solid fa-bag-shopping fa-xl bag-icon" data-item-id="{{ $course->id }}" data-item-type="courses" style="color:#bd6e6d; cursor:pointer;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                            }
-                        ?>
-                    </div>
-                    <div class="row">
-                        <a href="order" class="primary-btn buy">Conferma Ordine</a>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="product__pagination">
-                                <a class="active" href="bag">1</a>
-                                <a href="bag">2</a>
-                                <a href="bag">3</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Shop Section End -->
 
     <!-- Footer Section Begin -->
@@ -419,7 +235,6 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
-    <script src="{{ asset('js/bag_for_views/bag.js') }}"></script>
 </body>
 
 </html>
