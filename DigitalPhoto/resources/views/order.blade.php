@@ -169,6 +169,85 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Shop Section Begin -->
+    <section class="checkout">
+        <div class="container">
+            <div class="row order-row">
+                <!-- Billing Details -->
+                <div class="col-lg-8">
+                    <h4 class="order-h4">Dettagli Fatturazione</h4>
+                    <form action="#" method="POST" class="checkout__form">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <label for="name">Nome <span>*</span></label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <label for="surname">Cognome <span>*</span></label>
+                                    <input type="text" id="surname" name="surname" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input data-checkout">
+                            <label for="address">Indirizzo <span>*</span></label>
+                            <input type="text" id="address" name="address" placeholder="Via e numero civico" required>
+                        </div>
+                        <div class="checkout__input data-checkout">
+                            <label for="city">Città <span>*</span></label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="checkout__input data-checkout">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="checkout__input data-checkout">
+                            <label for="phone">Telefono <span>*</span></label>
+                            <input type="text" id="phone" name="phone" required>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Order Summary -->
+                <div class="col-lg-4">
+                    <div class="checkout__order">
+                        <h4>Riepilogo Ordine</h4>
+                        <div class="checkout-order-sub">Prodotti: <span class="checkout-span">Totale:</span></div>
+                        <ul>
+                            <li class="checkout-li">Album "Titolo Album" <span class="checkout-span">€ 29.99</span></li>
+                            <li class="checkout-li">Gadget "Descrizione Gadget" <span class="checkout-span">€ 19.99</span></li>
+                            <li class="checkout-li">Corso "Nome Corso" <span class="checkout-span">€ 49.99</span></li>
+                        </ul>
+                        <div class="check-row">
+                            <div>Subtotale <span class="checkout-span">€ 99.97</span></div>   
+                            <div>Totale <span class="checkout-span">€ 99.97</span></div>
+                        </div>
+                        <!-- Payment Method -->
+                        <div class="checkout__input__checkbox">
+                            <label for="cash">
+                                Pagamento alla Consegna
+                                <input type="checkbox" id="cash" name="payment_method" value="cash">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkout__input__checkbox">
+                            <label for="card">
+                                Carta di Credito
+                                <input type="checkbox" id="card" name="payment_method" value="card">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="row">
+                            <a href="bag" class="primary-btn buy">Invia Ordine</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Shop Section End -->
 
     <!-- Footer Section Begin -->
