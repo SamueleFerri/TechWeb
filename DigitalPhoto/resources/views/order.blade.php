@@ -241,7 +241,7 @@
                         </div>
                         
                         <div class="row">
-                            <a href="bag" class="primary-btn buy">Invia Ordine</a>
+                            <button class="primary-btn buy" onclick="emptyCart()">Invia Ordine</button>
                         </div>
                     </div>
                 </div>
@@ -314,6 +314,7 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/empty-cart.js') }}"></script>
 </body>
 
 </html>
