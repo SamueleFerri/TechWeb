@@ -2877,7 +2877,7 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	border-color: #e53637;
+	border-color: green;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2901,7 +2901,7 @@ ol {
 	top: -3px;
 	width: 14px;
 	height: 7px;
-	border: solid #e53637;
+	border: solid green;
 	border-width: 1.5px 1.5px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);
