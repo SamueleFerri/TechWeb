@@ -8,6 +8,10 @@
                                     JOIN carrelli c ON gc.carrelli_id = c.id');
     $courses_bag = DB::select('SELECT c.id, c.nome, c.descrizione, c.prezzo FROM corsi c JOIN corsi_in_carrelli cc ON c.id = cc.corsi_id
                                     JOIN carrelli ca ON cc.carrelli_id = ca.id');
+
+    $tot = 0;
+    $max_output = 0;
+    $max_chars = 20;
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -216,13 +220,52 @@
                         <h4>Riepilogo Ordine</h4>
                         <div class="checkout-order-sub">Prodotti: <span class="checkout-span">Totale:</span></div>
                         <ul>
-                            <li class="checkout-li">Album "Titolo Album" <span class="checkout-span">€ 29.99</span></li>
-                            <li class="checkout-li">Gadget "Descrizione Gadget" <span class="checkout-span">€ 19.99</span></li>
-                            <li class="checkout-li">Corso "Nome Corso" <span class="checkout-span">€ 49.99</span></li>
+                            <?php 
+                                foreach($albums_bag as $album){
+                                    if($max_output >= 5) {
+                                        break;
+                                    }
+                                    $max_output++;
+                                    $tot += (float)$album->prezzo;
+                            ?>
+                            <li class="checkout-li">Album: <?php echo mb_strimwidth(htmlspecialchars($album->titolo), 0, $max_chars, "...") ?><span class="checkout-span"><?php echo number_format($album->prezzo, 2)
+                             ?> $</span></li>
+                            <?php 
+                                }
+                            ?>
+                            <?php 
+                                foreach($gadgets_bag as $gadget){
+                                    if($max_output >= 5) {
+                                        break;
+                                    }
+                                    $tot += (float)$gadget->prezzo;
+                                    $max_output++;
+                            ?>
+                            <li class="checkout-li">Gadget: <?php echo mb_strimwidth(htmlspecialchars($gadget->descrizione), 0, $max_chars, "...") ?><span class="checkout-span"><?php echo number_format($gadget->prezzo, 2) ?> $</span></li>
+                            <?php 
+                                }
+                            ?>
+                            <?php 
+                                foreach($courses_bag as $course){
+                                    if($max_output >= 5) {
+                                        break;
+                                    }
+                                    $max_output++;
+                                    $tot += (float)$course->prezzo;
+                            ?>
+                            <li class="checkout-li">Corsi: <?php echomb_strimwidth(htmlspecialchars($course->titolo), 0, $max_chars, "...") ?><span class="checkout-span"><?php echo number_format($course->prezzo, 2) ?> $</span></li>
+                            <?php 
+                                }
+                            ?>
+                            <?php 
+                                if($max_output >= 5) {
+                                    echo '<li class="checkout-li">........</li>';
+                                }
+                            ?>
                         </ul>
                         <div class="check-row">
-                            <div>Subtotale <span class="checkout-span">€ 99.97</span></div>   
-                            <div>Totale <span class="checkout-span">€ 99.97</span></div>
+                            <div>Subtotale <span class="checkout-span"><?php echo $tot ?> $</span></div>   
+                            <div>Totale <span class="checkout-span"><?php echo $tot ?> $</span></div>
                         </div>
                         <!-- Payment Method -->
                         <div class="checkout__input__checkbox">
