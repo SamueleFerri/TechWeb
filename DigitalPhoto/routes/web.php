@@ -55,6 +55,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::get('/tabella_prova', function () { 
+    return view('tabella_prova');
+})->middleware(['auth', 'verified'])->name('tabella');
+
+
 Route::post('/empty-cart', function () {
     try {
         DB::table('albums_in_carrelli')->truncate();
