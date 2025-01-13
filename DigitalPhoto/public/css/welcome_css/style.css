@@ -1146,6 +1146,48 @@ ol {
 	margin-top: 20px;
 }
 
+.order-row {
+	margin-top: 20px;
+}
+
+.order-h4 {
+	font-size: 35px;
+	font-weight: 700;
+	margin: 20px;
+}
+
+.checkout {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.data-checkout {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.checkout-order-sub {
+	font-size: 18px;
+	color: #111111;
+	margin-bottom: 5px;
+	margin-top: 15px;
+}
+
+.check-row {
+	font-size: 16px;
+	color: #111111;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.checkout-li {
+	margin: 5px;
+}
+
+.checkout-span {
+	float: right;
+}
+
 .liked {
 	color: #bd6e6d !important; /* Cambia il colore se l'elemento è likato */
 }
@@ -2835,7 +2877,7 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	border-color: #e53637;
+	border-color: green;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2859,7 +2901,7 @@ ol {
 	top: -3px;
 	width: 14px;
 	height: 7px;
-	border: solid #e53637;
+	border: solid green;
 	border-width: 1.5px 1.5px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);
@@ -2878,6 +2920,7 @@ ol {
 .checkout__order {
 	background: #f3f2ee;
 	padding: 30px;
+	margin-top: 25px;
 }
 
 .checkout__order .order__title {
