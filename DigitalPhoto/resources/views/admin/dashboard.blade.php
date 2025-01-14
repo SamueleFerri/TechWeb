@@ -1,3 +1,24 @@
+<?php
+    
+    use Illuminate\Support\Facades\DB;
+
+    // $num_orders = DB::select('SELECT COUNT() ordini.data, 
+    //                         FROM ordini 
+    //                         WHERE ordini.data > '20200101' and ordini.data < '20253112' ');
+
+    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email 
+                            FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
+                                        JOIN users ON carrelli.user_id = users.id');
+
+    $query = "
+                SELECT 
+                users.email
+                FROM ordini
+                JOIN carrelli ON ordini.carrelli_id = carrelli.id
+                JOIN users ON carrelli.user_id = users.id
+                WHERE orders.id = :order_id
+            ";
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -121,9 +142,58 @@
     </header>
     <!-- Header Section End -->
 
+    <!-- Shop Section Begin -->
+    <section class="checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card chart-container">
+                        <canvas id="chartPie"></canvas>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card chart-container">
+                        <canvas id="chartLineColumn"></canvas>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row order-row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Id Ordine</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Prezzo Totale</th>
+                            </tr>
+                        </thead>
+                        <?php 
+                            foreach($orders as $order){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><?php echo $order->id?></td>
+                                <td><?php echo $order->email?></td>
+                                <td><?php echo $order->data ?></td>
+                                <td><?php echo $order->totale_ordine ?> $</td>
+                            </tr>
+                        </tbody>
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section End -->
 
     <!-- Footer Section Begin -->
-    {{-- <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -157,7 +227,7 @@
                 </div>
             </div>
         </div>
-    </footer> --}}
+    </footer>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
@@ -171,6 +241,48 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script>
+        const chartLineColumn = document.getElementById("chartLineColumn").getContext('2d');
+        const myChartLineColumn = new Chart(chartLineColumn, {
+          type: 'line',
+          data: {
+            labels: ["2020", "2021", "2022",
+            "2023", "2024", "2025"],
+            datasets: [{
+              label: 'Numero Ordini Emessi',
+              backgroundColor: 'rgb(0, 116, 217)',
+              borderColor: 'rgb(9, 71, 111)',
+              data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                }
+              }]
+            }
+          },
+        });
+    </script>
+
+    <script>
+      const chartPie = document.getElementById("chartPie").getContext('2d');
+      const myChartPie = new Chart(chartPie, {
+        type: 'doughnut',
+        data: {
+          labels: ["Gadgets", "Corsi", "Album"],
+          datasets: [{
+            label: 'Articoli in Vendita',
+            data: [30, 40, 20],
+            backgroundColor: ["#0074D9", "#FF4130", "#2ECC40"]
+          }]
+        },
+      });
+    </script>
+
 </body>
 
 </html>
