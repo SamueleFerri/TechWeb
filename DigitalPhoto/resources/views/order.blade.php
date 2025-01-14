@@ -284,7 +284,7 @@
                         </div>
                         
                         <div class="row">
-                            <button class="primary-btn buy" onclick="emptyCart()">Invia Ordine</button>
+                            <button class="primary-btn buy" onclick="emptyCart(<?php echo $tot?>)">Invia Ordine</button>
                         </div>
                     </div>
                 </div>

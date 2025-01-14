@@ -1,6 +1,8 @@
-function emptyCart() {
+function emptyCart(totaleOrdine) {
     // Token CSRF necessario per protezione delle richieste
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    console.log('Totale Ordine:', totaleOrdine);
 
     // Chiamata AJAX
     fetch('/empty-cart', {
@@ -9,7 +11,7 @@ function emptyCart() {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken,
         },
-        body: JSON.stringify({})
+        body: JSON.stringify({ parametro: parseFloat(totaleOrdine) })
     })
     .then(response => {
         if (!response.ok) {
