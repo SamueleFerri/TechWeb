@@ -3,7 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileAdminController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LikeAlbumsController;
@@ -65,13 +68,33 @@ Route::get('/tabella_prova', function () {
 })->middleware(['auth', 'verified'])->name('tabella');
 
 
-Route::post('/empty-cart', function () {
+Route::post('/empty-cart', function (Request $request) {
     try {
+        $totaleOrdine = $request->input('parametro');
+        $userId = auth::id();
+
+        $carrello = DB::table('carrelli')
+            ->where('user_id', $userId)
+            ->first();
+
+        if (!$carrello) {
+            throw new \Exception('Carrello non trovato.');
+        }
+
+        DB::table('ordini')->insert([
+            'carrelli_id' => $carrello->id,
+            'data' => now()->toDateString(),
+            'totale_ordine' => $totaleOrdine
+        ]);
+
+        // Svuota i carrelli
         DB::table('albums_in_carrelli')->truncate();
         DB::table('corsi_in_carrelli')->truncate();
         DB::table('gadgets_in_carrelli')->truncate();
+
         return response()->json(['success' => true]);
     } catch (\Exception $e) {
+        Log::error('Errore in /empty-cart: ' . $e->getMessage());
         return response()->json(['success' => false, 'error' => $e->getMessage()]);
     }
 })->middleware(['auth', 'verified'])->name('empty-cart');
