@@ -30,14 +30,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/elegant-icons.css') }}" type="text/css">
-    {{-- <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css"> --}}
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/nice-select.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/owl.carousel.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/slicknav.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
 </head>
 
 <body>
