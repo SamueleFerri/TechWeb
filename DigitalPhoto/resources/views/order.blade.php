@@ -23,7 +23,6 @@
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalPhoto</title>
@@ -31,14 +30,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-    <!-- Latest compiled and minified CSS -->
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/elegant-icons.css') }}" type="text/css">
-    {{-- <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('css/welcome_css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/owl.carousel.css') }}" type="text/css">
@@ -48,7 +43,7 @@
 
 <body>
     
-    <!-- Offcanvas Menu Begin -->
+    <!-- Menu Mobile Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <nav class="mobile__menu">
@@ -70,7 +65,6 @@
                         <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                         <div class="dropdown__user__links">
                             <a href="{{ route('profile.edit') }}">Profilo</a>
-                            {{-- <a href="#contact">Notifiche</a> --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -93,7 +87,7 @@
             </div>
         </div>
     </div>
-    <!-- Offcanvas Menu End -->
+    <!-- Menu Mobile End -->
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -125,7 +119,6 @@
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                                     <div class="dropdown__user__links">
                                         <a href="{{ route('profile.edit') }}">Profilo</a>
-                                        {{-- <a href="#contact">Notifiche</a> --}}
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -134,9 +127,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
-                                {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
-                                {{-- fare query_php --}}
                             @else
                                 <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                                     Login
@@ -329,15 +319,6 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        {{-- <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p> --}}
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>
