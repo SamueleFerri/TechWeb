@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="/"><img src="img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -199,7 +199,7 @@
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $album->id ?>.png">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/copertina_album<?php echo $album->id ?>.png">
                                     <span class="prezzo"><?php echo $album->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
@@ -224,7 +224,7 @@
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $gadget->id ?>.png">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/copertina_album<?php echo $gadget->id ?>.png">
                                     <span class="prezzo"><?php echo $gadget->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
@@ -249,7 +249,7 @@
                         ?>
                         <div class="col__dipslay__card col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals col__items__card">
                             <div class="card card__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/welcome_img/product/copertina_album<?php echo $course->id ?>.png">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/copertina_album<?php echo $course->id ?>.png">
                                     <span class="prezzo"><?php echo $course->prezzo ?>$</span>
                                 </div>
                                 <div class="product__item__text">
@@ -292,12 +292,12 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
+                            <a href="#"><img src="img/DPLogo_noback_white.png" alt=""></a>
                         </div>
                         <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
                             esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
                             fotografiche. </p>
-                        <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">

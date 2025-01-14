@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="/"><img src="img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -291,12 +291,12 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
+                            <a href="#"><img src="img/DPLogo_noback_white.png" alt=""></a>
                         </div>
                         <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
                             esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
                             fotografiche. </p>
-                        <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">

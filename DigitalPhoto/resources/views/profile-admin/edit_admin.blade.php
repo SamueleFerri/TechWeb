@@ -27,15 +27,15 @@
     <div class="offcanvas-menu-wrapper">
         <nav class="mobile__menu">
             <ul>
-                <li class="active"> <a href="admin/dashboard"> Dashboard </a> </li>
-                <li> <a href=""> Notifiche </a> </li>
+                <li> <a href="admin/dashboard"> Dashboard </a> </li>
+                <li> <a href="admin/notifications"> Notifiche </a> </li>
             </ul>
         </nav>
         <div class="offcanvas__nav__option">
             <div class="offcanvas_btn-LoginRegister">
                 @if (Route::has('login'))
                 @auth
-                    <a class="icon__header" href=""> <i class="fa-solid fa-bell fa-lg"></i> </a>
+                    <a class="icon__header" href="admin/notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                     <div class="dropdown__user icon__header">
                         <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                         <div class="dropdown__user__links">
@@ -70,14 +70,14 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="admin/dashboard"><img src="../img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="admin/dashboard"><img src="../img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"> <a href="admin/dashboard"> Dashboard </a> </li>
-                            <li> <a href=""> Notifiche </a> </li>
+                            <li> <a href="admin/dashboard"> Dashboard </a> </li>
+                            <li> <a href="admin/notifications"> Notifiche </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -85,7 +85,7 @@
                     <nav class="header__menu">
                         @if (Route::has('login'))
                             @auth
-                                <a class="icon__header" href=""> <i class="fa-solid fa-bell fa-lg"></i> </a>
+                                <a class="icon__header" href="admin/notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                                 <div class="dropdown__user icon__header">
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                                     <div class="dropdown__user__links">
