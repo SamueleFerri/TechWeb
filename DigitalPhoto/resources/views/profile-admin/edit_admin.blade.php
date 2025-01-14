@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
-    {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalPhoto</title>
@@ -22,7 +21,7 @@
 
 <body>
 
-    <!-- Offcanvas Menu Begin -->
+    <!-- Menu Mobile Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <nav class="mobile__menu">
@@ -62,7 +61,7 @@
             </div>
         </div>
     </div>
-    <!-- Offcanvas Menu End -->
+    <!-- Menu Mobile End -->
 
     <!-- Header Section Begin -->
     <header class="header">
