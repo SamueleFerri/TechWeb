@@ -1146,6 +1146,11 @@ ol {
 	margin-top: 20px;
 }
 
+.buy.disabled-button {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 .order-row {
 	margin-top: 20px;
 }

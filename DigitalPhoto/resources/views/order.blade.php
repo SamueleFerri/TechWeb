@@ -9,6 +9,8 @@
     $courses_bag = DB::select('SELECT c.id, c.nome, c.descrizione, c.prezzo FROM corsi c JOIN corsi_in_carrelli cc ON c.id = cc.corsi_id
                                     JOIN carrelli ca ON cc.carrelli_id = ca.id');
 
+    $is_cart_empty = empty($albums_bag) && empty($courses_bag) && empty($gadgets_bag);
+
     $tot = 0;
     $max_output = 0;
     $max_chars = 20;
@@ -284,7 +286,10 @@
                         </div>
                         
                         <div class="row">
-                            <button class="primary-btn buy" onclick="emptyCart(<?php echo $tot?>)">Invia Ordine</button>
+                            <button class="primary-btn buy <?php if ($is_cart_empty) echo 'disabled-button'; ?>" 
+                                <?php if ($is_cart_empty) echo 'disabled'; ?> onclick="emptyCart(<?php echo $tot?>)">
+                                Invia Ordine
+                            </button>
                         </div>
                     </div>
                 </div>
