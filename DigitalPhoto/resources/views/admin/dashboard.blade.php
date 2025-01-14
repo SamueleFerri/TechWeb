@@ -6,7 +6,7 @@
     //                         FROM ordini 
     //                         WHERE ordini.data > '20200101' and ordini.data < '20253112' ');
 
-    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email 
+    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email, ordini.id 
                             FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
                                         JOIN users ON carrelli.user_id = users.id');
 
@@ -53,14 +53,14 @@
         <nav class="mobile__menu">
             <ul>
                 <li class="active"> <a href="dashboard"> Dashboard </a> </li>
-                <li> <a href=""> Notifiche </a> </li>
+                <li> <a href="notifications"> Notifiche </a> </li>
             </ul>
         </nav>
         <div class="offcanvas__nav__option">
             <div class="offcanvas_btn-LoginRegister">
                 @if (Route::has('login'))
                 @auth
-                    <a class="icon__header" href=""> <i class="fa-solid fa-bell fa-lg"></i> </a>
+                    <a class="icon__header" href="notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                     <div class="dropdown__user icon__header">
                         <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                         <div class="dropdown__user__links">
@@ -102,7 +102,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"> <a href="dashboard"> Dashboard </a> </li>
-                            <li> <a href=""> Notifiche </a> </li>
+                            <li> <a href="notifications"> Notifiche </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -110,7 +110,7 @@
                     <nav class="header__menu">
                         @if (Route::has('login'))
                             @auth
-                                <a class="icon__header" href=""> <i class="fa-solid fa-bell fa-lg"></i> </a>
+                                <a class="icon__header" href="notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                                 <div class="dropdown__user icon__header">
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                                     <div class="dropdown__user__links">

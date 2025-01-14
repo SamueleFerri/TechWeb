@@ -2,13 +2,17 @@
     
     use Illuminate\Support\Facades\DB;
 
-    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email 
+    // $num_orders = DB::select('SELECT COUNT() ordini.data, 
+    //                         FROM ordini 
+    //                         WHERE ordini.data > '20200101' and ordini.data < '20253112' ');
+
+    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email, ordini.id 
                             FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
                                         JOIN users ON carrelli.user_id = users.id');
 
     $query = "
                 SELECT 
-                    users.email
+                users.email
                 FROM ordini
                 JOIN carrelli ON ordini.carrelli_id = carrelli.id
                 JOIN users ON carrelli.user_id = users.id
@@ -17,12 +21,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
-    <link rel="icon" type="image/x-icon" href="faviconDP.ico">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/x-icon" href="../faviconDP.ico">
     {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,9 +33,6 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-    <!-- Latest compiled and minified CSS -->
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
@@ -47,30 +46,25 @@
 </head>
 
 <body>
-    
+
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <nav class="mobile__menu">
             <ul>
-                <li> <a href="\"> Home </a> </li>
-                <li> <a href="albums"> Album </a> </li>
-                <li> <a href="gadgets"> Accessori </a> </li>
-                <li> <a href="courses"> Corsi </a> </li>
-                <li> <a href="about"> Chi Siamo </a> </li>
+                <li> <a href="dashboard"> Dashboard </a> </li>
+                <li class="active"> <a href="notifications"> Notifiche </a> </li>
             </ul>
         </nav>
         <div class="offcanvas__nav__option">
             <div class="offcanvas_btn-LoginRegister">
                 @if (Route::has('login'))
                 @auth
-                    <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
-                    <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                    <a class="icon__header" href="notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                     <div class="dropdown__user icon__header">
                         <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                         <div class="dropdown__user__links">
-                            <a href="{{ route('profile.edit') }}">Profilo</a>
-                            {{-- <a href="#contact">Notifiche</a> --}}
+                            <a href="{{ route('profile.edit_admin') }}">Profilo</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -101,31 +95,26 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="/"><img src="img/welcome_img/DPLogo.png" alt=""></a>
+                        <a href="dashboard"><img src="../img/welcome_img/DPLogo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
+                    <nav class="header__menu">
                         <ul>
-                            <li> <a href="\"> Home </a> </li>
-                            <li> <a href="albums"> Album </a> </li>
-                            <li> <a href="gadgets"> Accessori </a> </li>
-                            <li> <a href="courses"> Corsi </a> </li>
-                            <li> <a href="about"> Chi Siamo </a> </li>
+                            <li> <a href="dashboard"> Dashboard </a> </li>
+                            <li class="active"> <a href="notifications"> Notifiche </a> </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <nav class="header__menu mobile-menu">
+                    <nav class="header__menu">
                         @if (Route::has('login'))
                             @auth
-                                <a class="icon__header" href="likes"> <i class="fa-solid fa-heart fa-lg"></i> </a>
-                                <a class="icon__header" href="bag"> <i class="fa-solid fa-bag-shopping fa-lg"></i> </a>
+                                <a class="icon__header" href="notifications"> <i class="fa-solid fa-bell fa-lg"></i> </a>
                                 <div class="dropdown__user icon__header">
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                                     <div class="dropdown__user__links">
-                                        <a href="{{ route('profile.edit') }}">Profilo</a>
-                                        {{-- <a href="#contact">Notifiche</a> --}}
+                                        <a href="{{ route('profile.edit_admin') }}">Profilo</a>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -134,9 +123,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
-                                {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
-                                {{-- fare query_php --}}
                             @else
                                 <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                                     Login
@@ -156,33 +142,16 @@
     </header>
     <!-- Header Section End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Conferma Ordine</h4>
-                        <div class="breadcrumb__links">
-                            <a href="bag">Carrello</a>
-                            <span>Conferma Ordine</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-
     <!-- Shop Section Begin -->
     <section class="checkout">
-        <div class="container">
+        <div class="container"> 
             <div class="row order-row">
                 <div class="col-12">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Id Ordine</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Prezzo Totale</th>
@@ -194,6 +163,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
+                                <td><?php echo $order->id?></td>
                                 <td><?php echo $order->email?></td>
                                 <td><?php echo $order->data ?></td>
                                 <td><?php echo $order->totale_ordine ?> $</td>
@@ -216,12 +186,12 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/welcome_img/DPLogo_noback_white.png" alt=""></a>
+                            <a href="dashboard"><img src="../img/welcome_img/DPLogo_noback_white.png" alt=""></a>
                         </div>
-                        <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni 
-                            esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità 
+                        <p> DigitalPhoto offre album fotografici di alta qualità, corsi di fotografia professionali e accessori per ogni
+                            esigenza fotografica. Siamo il partner ideale per immortalare i tuoi momenti speciali e migliorare le tue abilità
                             fotografiche. </p>
-                        <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
+                        <a href="dashboard"><img src="../img/welcome_img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -229,7 +199,7 @@
                         <h6>NewsLetter</h6>
                         <div class="footer__newslatter">
                             <p>Iscriviti alla nostra Newsletter per offerte esclusive, consigli fotografici e le ultime novità di DigitalPhoto!</p>
-                            <form action="#">
+                            <form action="/">
                                 <input type="text" placeholder="Email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
                             </form>
@@ -240,27 +210,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        {{-- <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p> --}}
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
@@ -273,6 +228,7 @@
     <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
     <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+
 </body>
 
 </html>

@@ -35,10 +35,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
 Route::get('/bag', function () {
     return view('bag');
 })->middleware(['auth', 'verified'])->name('bag');
@@ -54,19 +50,6 @@ Route::get('/likes', function () {
 Route::get('/gadgets', function () {
     return view('gadgets');
 });
-
-// Route::get('/admin/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-Route::get('/tabella_prova', function () { 
-    return view('tabella_prova');
-})->middleware(['auth', 'verified'])->name('tabella');
-
 
 Route::post('/empty-cart', function (Request $request) {
     try {
@@ -112,6 +95,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::get('/admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+
+Route::get('/admin/notifications', function () {
+    return view('admin.notifications');
+})->middleware(['auth', 'admin'])->name('notifications');
 
 // Mostra gli articoli preferiti
 Route::get('/like', [LikeController::class, 'showLikes'])->name('like.show');
