@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="DigitalPhoto">
     <link rel="icon" type="image/x-icon" href="faviconDP.ico">
-    {{-- <meta name="keywords" content="Male_Fashion, unica, creative, html"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalPhoto</title>
@@ -20,13 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
-    <!-- Latest compiled and minified CSS -->
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/welcome_css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/elegant-icons.css') }}" type="text/css">
-    {{-- <link rel="stylesheet" href="{{ asset('css/welcome_css/font-awesome.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('css/welcome_css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/welcome_css/owl.carousel.css') }}" type="text/css">
@@ -36,7 +31,7 @@
 
 <body>
 
-    <!-- Offcanvas Menu Begin -->
+    <!-- Menu Mobile Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <nav class="mobile__menu">
@@ -58,7 +53,6 @@
                         <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                         <div class="dropdown__user__links">
                             <a href="{{ route('profile.edit') }}">Profilo</a>
-                            {{-- <a href="#contact">Notifiche</a> --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -81,37 +75,10 @@
             </div>
         </div>
     </div>
-    <!-- Offcanvas Menu End -->
+    <!-- Menu Mobile End -->
 
     <!-- Header Section Begin -->
     <header class="header">
-        {{-- <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="container__header">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
@@ -140,7 +107,6 @@
                                     <a> <i class="fa-solid fa-user fa-lg"></i> </a>
                                     <div class="dropdown__user__links">
                                         <a href="{{ route('profile.edit') }}">Profilo</a>
-                                        {{-- <a href="#contact">Notifiche</a> --}}
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <a href=" {{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -149,9 +115,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                {{-- <a href="likes"><img src="img/welcome_img/icon/heart.png" alt=""></a> --}}
-                                {{-- <a href="bag"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a> --}}
-                                {{-- fare query_php --}}
                             @else
                                 <a href="{{ route('login') }}" class="primary-btn-LoginRegister">
                                     Login
@@ -164,12 +127,6 @@
                             @endauth
                         @endif
                     </nav>
-                    {{-- <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/welcome_img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/welcome_img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/welcome_img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div> --}}
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
@@ -226,23 +183,6 @@
                 <div class="col-lg-6 col-md-6 about-img">
                     <img src="img/welcome_img/about.png" alt="">
                 </div>
-                   {{--  <div class="contact__form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Email">
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea placeholder="Message"></textarea>
-                                    <button type="submit" class="site-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div> --}}
-                </div>
             </div>
         </div>
     </section>
@@ -273,28 +213,6 @@
                         <a href="#"><img src="img/welcome_img/payment.png" alt=""></a>
                     </div>
                 </div>
-                {{-- <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
-                        </ul>
-                    </div>
-                </div> --}}
-                {{-- <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
-                </div> --}}
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h6>NewsLetter</h6>
@@ -311,32 +229,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        {{-- <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p> --}}
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    {{-- <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div> --}}
-    <!-- Search End -->
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
