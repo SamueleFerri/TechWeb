@@ -2,13 +2,8 @@
     
     use Illuminate\Support\Facades\DB;
 
-    // $num_orders = DB::select('SELECT COUNT() ordini.data, 
-    //                         FROM ordini 
-    //                         WHERE ordini.data > '20200101' and ordini.data < '20253112' ');
-
-    $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email, ordini.id 
-                            FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
-                                        JOIN users ON carrelli.user_id = users.id');
+    $notifications = DB::select('SELECT notifiche.*, users.email
+                                FROM notifiche JOIN users ON notifiche.user_id = users.id');
 
     $query = "
                 SELECT 
@@ -151,22 +146,24 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Id Ordine</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Data</th>
-                                <th scope="col">Prezzo Totale</th>
+                                <th scope="col">Id Notifica</th>
+                                <th scope="col">Email User</th>
+                                <th scope="col">Tipologia</th>
+                                <th scope="col">Note</th>
+                                <th scope="col">Stato</th>
                             </tr>
                         </thead>
                         <?php 
-                            foreach($orders as $order){
+                            foreach($notifications as $notification){
                         ?>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><?php echo $order->id?></td>
-                                <td><?php echo $order->email?></td>
-                                <td><?php echo $order->data ?></td>
-                                <td><?php echo $order->totale_ordine ?> $</td>
+                                <td><?php echo $notification->id ?></td>
+                                <td><?php echo $notification->email ?></td>
+                                <td><?php echo $notification->tipologia ?></td>
+                                <td><?php echo $notification->note ?></td>
+                                <td><?php echo $notification->stato ?></td>
                             </tr>
                         </tbody>
                         <?php
