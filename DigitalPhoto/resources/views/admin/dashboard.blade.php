@@ -2,13 +2,18 @@
     
     use Illuminate\Support\Facades\DB;
 
-    // $num_orders = DB::select('SELECT COUNT() ordini.data, 
-    //                         FROM ordini 
-    //                         WHERE ordini.data > '20200101' and ordini.data < '20253112' ');
+    $totAlbums = DB::table('albums')->count();
+    $totGadgets = DB::table('gadgets')->count();
+    $totCourses = DB::table('corsi')->count();
 
     $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email, ordini.id 
                             FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
                                         JOIN users ON carrelli.user_id = users.id');
+
+    $sellForYear = DB::table('ordini')
+        ->select(DB::raw('YEAR(data) as anno'), DB::raw('count(*) as totale'))
+        ->groupBy(DB::raw('YEAR(data)'))
+        ->get();
 
     $query = "
                 SELECT 
@@ -243,17 +248,23 @@
     <script src="{{ asset('js/welcome_js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script>
+        var sellForYear = @json($sellForYear);
+        var years = [];
+        var coutForYear = [];
+        sellForYear.forEach(function(item) {
+            years.push(item.anno);
+            coutForYear.push(item.totale);
+        });
         const chartLineColumn = document.getElementById("chartLineColumn").getContext('2d');
         const myChartLineColumn = new Chart(chartLineColumn, {
           type: 'line',
           data: {
-            labels: ["2020", "2021", "2022",
-            "2023", "2024", "2025"],
+            labels: years,
             datasets: [{
               label: 'Numero Ordini Emessi',
               backgroundColor: 'rgb(0, 116, 217)',
               borderColor: 'rgb(9, 71, 111)',
-              data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+              data: coutForYear,
             }]
           },
           options: {
@@ -269,18 +280,21 @@
     </script>
 
     <script>
-      const chartPie = document.getElementById("chartPie").getContext('2d');
-      const myChartPie = new Chart(chartPie, {
-        type: 'doughnut',
-        data: {
-          labels: ["Gadgets", "Corsi", "Album"],
-          datasets: [{
-            label: 'Articoli in Vendita',
-            data: [30, 40, 20],
-            backgroundColor: ["#0074D9", "#FF4130", "#2ECC40"]
-          }]
-        },
-      });
+        var totGadgets = @json($totGadgets);
+        var totCourses = @json($totCourses);
+        var totAlbums = @json($totAlbums);
+        const chartPie = document.getElementById("chartPie").getContext('2d');
+        const myChartPie = new Chart(chartPie, {
+            type: 'doughnut',
+            data: {
+            labels: ["Gadgets", "Corsi", "Album"],
+            datasets: [{
+                label: 'Articoli in Vendita',
+                data: [totGadgets, totCourses, totAlbums],
+                backgroundColor: ["#0074D9", "#FF4130", "#2ECC40"]
+            }]
+            },
+        });
     </script>
 
 </body>
