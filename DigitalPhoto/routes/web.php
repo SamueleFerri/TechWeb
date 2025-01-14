@@ -70,6 +70,18 @@ Route::post('/empty-cart', function (Request $request) {
             'totale_ordine' => $totaleOrdine
         ]);
 
+        $carrello = DB::table('ordini')
+            ->where('carrelli_id', $carrello->id)
+            ->orderBy('id', 'desc') 
+            ->first();
+
+        DB::table('notifiche')->insert([
+            'user_id' => $userId,
+            'tipologia' => "Nuovo Ordine",
+            'note' => "Id Ordine: " . $carrello->id,
+            'stato' => true
+        ]);
+
         // Svuota i carrelli
         DB::table('albums_in_carrelli')->truncate();
         DB::table('corsi_in_carrelli')->truncate();
