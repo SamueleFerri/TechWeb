@@ -107,7 +107,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/profile-admin', [ProfileAdminController::class, 'edit'])->name('profile.edit_admin');
-    Route::patch('/profile-admin', [ProfileAdminController::class, 'update'])->name('profile.update_admim');
+    Route::patch('/profile-admin', [ProfileAdminController::class, 'update'])->name('profile.update_admin');
     Route::delete('/profile-admin', [ProfileAdminController::class, 'destroy'])->name('profile.destroy_admin');
 });
 
