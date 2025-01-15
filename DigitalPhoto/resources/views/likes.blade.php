@@ -327,13 +327,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scrip>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Js Plugins -->
     <script src="{{ asset('js/generics/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('js/generics/bootstrap.js') }}"></script>
     <script src="{{ asset('js/generics/owl.carousel.js') }}"></script>
-    <script src="{{ asset('js/generics/main.js') }}"></>
+    <script src="{{ asset('js/generics/main.js') }}"></script>
     <script src="{{ asset('js/like_for_views/likes.js') }}"></script>
 </body>
 
