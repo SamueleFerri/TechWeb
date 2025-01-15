@@ -5,6 +5,7 @@
     $totAlbums = DB::table('albums')->count();
     $totGadgets = DB::table('gadgets')->count();
     $totCourses = DB::table('corsi')->count();
+    $cont = 0;
 
     $orders = DB::select('SELECT ordini.data, ordini.totale_ordine, users.email, ordini.id 
                             FROM ordini JOIN carrelli ON ordini.carrelli_id = carrelli.id
@@ -171,10 +172,11 @@
                         </thead>
                         <?php 
                             foreach($orders as $order){
+                                $cont++;
                         ?>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row"><?php echo $cont ?></th>
                                 <td><?php echo $order->id?></td>
                                 <td><?php echo $order->email?></td>
                                 <td><?php echo $order->data ?></td>

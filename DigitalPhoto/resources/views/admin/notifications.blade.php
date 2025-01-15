@@ -5,6 +5,8 @@
     $notifications = DB::select('SELECT notifiche.*, users.email
                                 FROM notifiche JOIN users ON notifiche.user_id = users.id');
 
+    $cont = 0;
+
     $query = "
                 SELECT 
                 users.email
@@ -149,10 +151,11 @@
                         </thead>
                         <?php 
                             foreach($notifications as $notification){
+                                $cont++; 
                         ?>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row"><?php echo $cont ?></th>
                                 <td><?php echo $notification->id ?></td>
                                 <td><?php echo $notification->email ?></td>
                                 <td><?php echo $notification->tipologia ?></td>
