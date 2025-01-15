@@ -301,16 +301,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Js Plugins -->
-    <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/bootstrap.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.nice-select.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.nicescroll.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.countdown.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/generics/jquery-3.3.1.js') }}"></script>
+    <script src="{{ asset('js/generics/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/generics/owl.carousel.js') }}"></script>
+    <script src="{{ asset('js/generics/main.js') }}"></script>
     <script src="{{ asset('js/like_for_views/albums.js') }}"></script>
     <script src="{{ asset('js/bag_for_views/bag_albums.js') }}"></script>
 </body>

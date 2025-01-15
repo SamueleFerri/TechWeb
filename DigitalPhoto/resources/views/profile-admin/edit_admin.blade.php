@@ -141,16 +141,10 @@
     <!-- Profile Functions Begin -->
 
     <!-- Js Plugins -->
-    <script src="{{ asset('js/welcome_js/jquery-3.3.1.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/bootstrap.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.nice-select.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.nicescroll.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.countdown.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/mixitup.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/owl.carousel.js') }}"></script>
-    <script src="{{ asset('js/welcome_js/main.js') }}"></script>
+    <script src="{{ asset('js/generics/jquery-3.3.1.js') }}"></script>
+    <script src="{{ asset('js/generics/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/generics/owl.carousel.js') }}"></script>
+    <script src="{{ asset('js/generics/main.js') }}"></sc>
     @vite(['resources/js/app.js'])
 </body>
 

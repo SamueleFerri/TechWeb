@@ -1,35 +1,6 @@
-/*  ---------------------------------------------------
-    Template Name: Male Fashion
-    Description: Male Fashion - ecommerce teplate
-    Author: Colorib
-    Author URI: https://www.colorib.com/
-    Version: 1.0
-    Created: Colorib
----------------------------------------------------------  */
-
 'use strict';
 
 (function ($) {
-
-    /*------------------
-        Preloader
-    --------------------*/
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-
-        /*------------------
-            Gallery filter
-        --------------------*/
-        $('.filter__controls li').on('click', function () {
-            $('.filter__controls li').removeClass('active');
-            $(this).addClass('active');
-        });
-        if ($('.product__filter').length > 0) {
-            var containerEl = document.querySelector('.product__filter');
-            var mixer = mixitup(containerEl);
-        }
-    });
 
     /*------------------
         Background Set
@@ -49,14 +20,6 @@
             $('#search-input').val('');
         });
     });
-
-    /*------------------
-		Navigation
-	--------------------*/
-    // $(".mobile__menu").slicknav({
-    //     prependTo: '#mobile-menu-wrap',
-    //     allowParentLinks: true
-    // });
 
     /*------------------
         Accordin Active
@@ -97,29 +60,12 @@
         autoplay: true
     });
 
-    /*--------------------------
-        Select
-    ----------------------------*/
-    $("select").niceSelect();
-
     /*-------------------
 		Radio Btn
 	--------------------- */
     $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
         $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
         $(this).addClass('active');
-    });
-
-    /*-------------------
-		Scroll
-	--------------------- */
-    $(".nice-scroll").niceScroll({
-        cursorcolor: "#0d0d0d",
-        cursorwidth: "5px",
-        background: "#e5e5e5",
-        cursorborder: "",
-        autohidemode: true,
-        horizrailenabled: false
     });
 
     /*------------------
@@ -139,23 +85,6 @@
         mm = String(mm).padStart(2, '0');
     }
     var timerdate = mm + '/' + dd + '/' + yyyy;
-    // For demo preview end
-
-
-    // Uncomment below and use your date //
-
-    /* var timerdate = "2020/12/30" */
-
-    $("#countdown").countdown(timerdate, function (event) {
-        $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hours</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Minutes</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Seconds</p> </div>"));
-    });
-
-    /*------------------
-		Magnific
-	--------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
 
     /*-------------------
 		Quantity change
