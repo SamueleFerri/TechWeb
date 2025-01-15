@@ -241,7 +241,7 @@
                                     $max_output++;
                                     $tot += (float)$course->prezzo;
                             ?>
-                            <li class="checkout-li">Corsi: <?php echomb_strimwidth(htmlspecialchars($course->titolo), 0, $max_chars, "...") ?><span class="checkout-span"><?php echo number_format($course->prezzo, 2) ?> $</span></li>
+                            <li class="checkout-li">Corsi: <?php echo mb_strimwidth(htmlspecialchars($course->nome), 0, $max_chars, "...") ?><span class="checkout-span"><?php echo number_format($course->prezzo, 2) ?> $</span></li>
                             <?php 
                                 }
                             ?>
