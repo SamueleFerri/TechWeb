@@ -33,13 +33,6 @@ INSERT INTO `albums` (`id`, `titolo`, `descrizione`, `prezzo`) VALUES
 (5, 'Album 5', 'Quinto album, descrizione prova album 5', 90),
 (6, 'Album 6', 'Descrizione album 6', 42.9);
 
---
--- Dump dei dati per la tabella `carrelli`
---
-
-INSERT INTO `carrelli` (`id`, `user_id`) VALUES
-(1, 1),
-(2, 2);
 
 --
 -- Dump dei dati per la tabella `corsi`
@@ -60,6 +53,26 @@ INSERT INTO `gadgets` (`id`, `tipologia`, `descrizione`, `prezzo`) VALUES
 (3, 'Prova gadget 3', 'Descrizione prova gadget 3', 5),
 (4, 'Prova gadget 4', 'Descrizione prova gadget 4', 11.9);
 
+
+
+--
+-- Dump dei dati per la tabella `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `usertype`, `phone`, `address`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'samuele', 'ferri', 'samuele@gmail.com', 'user', '3445445556', 'via n24', NULL, '$2y$12$AR6D4bDm0xlUw.WYncII5eI97yUhOoN1g20KT85aEiAJ28WU.Dhcq', NULL, '2025-01-15 13:45:11', '2025-01-15 13:45:11'),
+(2, 'nicola', 'strada', 'nicola@gmail.com', 'user', '3557886995', 'via n47', NULL, '$2y$12$sGD5Ohso8uGQZwOb05aeXew95E5XXMnyHqQow0RNjPUzYFOBYnSKK', NULL, '2025-01-15 13:46:47', '2025-01-15 13:46:47'),
+(3, 'admin00', 'add', 'admin00@gmail.com', 'admin', '321321321', 'admin00@gmail.com', NULL, '$2y$12$izU2V.VtO2M/LJVzf7xxxe1sfxifRBXdYblIlBmfq17U2AAk6g5IO', NULL, '2025-01-07 16:52:27', '2025-01-07 16:52:27');
+COMMIT;
+
+--
+-- Dump dei dati per la tabella `preferiti`
+--
+
+INSERT INTO `preferiti` (`id`, `user_id`, `totale_articoli`) VALUES
+(1, 1, NULL),
+(2, 2, NULL);
+
 --
 -- Dump dei dati per la tabella `notifiche`
 --
@@ -70,6 +83,17 @@ INSERT INTO `notifiche` (`id`, `user_id`, `tipologia`, `note`, `stato`, `annulla
 (7, 2, 'Nuovo Ordine', 'Id Ordine: 19', 1, NULL),
 (8, 2, 'Nuovo Ordine', 'Id Ordine: 20', 1, NULL),
 (9, 1, 'Nuovo Ordine', 'Id Ordine: 22', 1, NULL);
+
+
+--
+-- Dump dei dati per la tabella `carrelli`
+--
+
+INSERT INTO `carrelli` (`id`, `user_id`) VALUES
+(1, 1),
+(2, 2);
+
+
 
 --
 -- Dump dei dati per la tabella `ordini`
@@ -91,23 +115,7 @@ INSERT INTO `ordini` (`id`, `carrelli_id`, `data`, `totale_ordine`) VALUES
 (24, 2, '2024-02-03', 69.99),
 (25, 2, '2024-03-09', 55.99);
 
---
--- Dump dei dati per la tabella `preferiti`
---
 
-INSERT INTO `preferiti` (`id`, `user_id`, `totale_articoli`) VALUES
-(1, 1, NULL),
-(2, 2, NULL);
-
---
--- Dump dei dati per la tabella `users`
---
-
-INSERT INTO `users` (`id`, `name`, `surname`, `email`, `usertype`, `phone`, `address`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'samuele', 'ferri', 'samuele@gmail.com', 'user', '3445445556', 'via n24', NULL, '$2y$12$AR6D4bDm0xlUw.WYncII5eI97yUhOoN1g20KT85aEiAJ28WU.Dhcq', NULL, '2025-01-15 13:45:11', '2025-01-15 13:45:11'),
-(2, 'nicola', 'strada', 'nicola@gmail.com', 'user', '3557886995', 'via n47', NULL, '$2y$12$sGD5Ohso8uGQZwOb05aeXew95E5XXMnyHqQow0RNjPUzYFOBYnSKK', NULL, '2025-01-15 13:46:47', '2025-01-15 13:46:47'),
-(3, 'admin00', 'add', 'admin00@gmail.com', 'admin', '321321321', 'admin00@gmail.com', NULL, '$2y$12$izU2V.VtO2M/LJVzf7xxxe1sfxifRBXdYblIlBmfq17U2AAk6g5IO', NULL, '2025-01-07 16:52:27', '2025-01-07 16:52:27');
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
