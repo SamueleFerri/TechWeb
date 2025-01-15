@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 15, 2025 alle 16:35
+-- Creato il: Gen 15, 2025 alle 16:59
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -98,13 +98,6 @@ INSERT INTO `ordini` (`id`, `carrelli_id`, `data`, `totale_ordine`) VALUES
 INSERT INTO `preferiti` (`id`, `user_id`, `totale_articoli`) VALUES
 (1, 1, NULL),
 (2, 2, NULL);
-
---
--- Dump dei dati per la tabella `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('P9mkUikonFIvD6i4JrLqB7xXNu0X7VeFREouUW9E', 3, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUWZySHB5bXBEUGJzTFNYb29EY0lkTFZIWHFnOHZKMWZXZjJqUXExaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9ub3RpZmljYXRpb25zIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mzt9', 1736955265);
 
 --
 -- Dump dei dati per la tabella `users`
